@@ -1,10 +1,10 @@
 # front-end-design-engineering
 
-# SimplifyHC - Simplificando o Acesso à Saúde
+# SimplesHC - Simplificando o Acesso à Saúde
 
 ## Objetivo do Projeto
 
-O SimplifyHC é uma plataforma web desenvolvida como parte da disciplina de Front-End Design Engineering. O principal objetivo é criar uma interface digital intuitiva e acessível para os serviços oferecidos pelo Hospital das Clínicas, com um foco especial em facilitar o uso por pacientes idosos e aqueles com menor familiaridade com tecnologia. O projeto visa simplificar processos como agendamento de consultas, acesso a resultados de exames, visualização de receitas médicas e teleconsultas.
+O SimplesHC é uma plataforma web desenvolvida como parte da disciplina de Front-End Design Engineering. O principal objetivo é criar uma interface digital intuitiva e acessível para os serviços oferecidos pelo Hospital das Clínicas, com um foco especial em facilitar o uso por pacientes idosos e aqueles com menor familiaridade com tecnologia. O projeto visa simplificar processos como agendamento de consultas, acesso a resultados de exames, visualização de receitas médicas e teleconsultas.
 
 ## Estrutura de Pastas e Arquivos
 
@@ -53,14 +53,13 @@ O projeto está organizado da seguinte forma:
 |       |-- minhas-receitas.html
 </pre>
 
-
 ## Tecnologia Utilizada
 
 O projeto foi desenvolvido utilizando exclusivamente:
 
-*   **HTML5:** Para a estruturação semântica do conteúdo.
-*   **CSS3:** Para a estilização e design responsivo, seguindo a abordagem Mobile First.
-*   **JavaScript (ES6+):** Para interatividade, manipulação do DOM, validação de formulários e lógica do Guia Interativo, sem o uso de frameworks ou bibliotecas externas.
+* **HTML5:** Para a estruturação semântica do conteúdo.
+* **CSS3:** Para a estilização e design responsivo, seguindo a abordagem Mobile First.
+* **JavaScript (ES6+):** Para interatividade, manipulação do DOM, validação de formulários e lógica do Guia Interativo.
 
 ## Integrantes da Equipe
 
@@ -72,9 +71,8 @@ O projeto foi desenvolvido utilizando exclusivamente:
 
 ## Endereço do Repositório do Projeto no GitHub
 
-[https://github.com/Grupo-Challenge-EML-1TDSPG/front-end-design-engineering](https://github.com/Grupo-Challenge-EML-1TDSPG/front-end-design-engineering) 
-<!-- Substitua pelo link real do seu repositório -->
+[https://github.com/Grupo-Challenge-EML-1TDSPG/front-end-design-engineering](https://github.com/Grupo-Challenge-EML-1TDSPG/front-end-design-engineering)
 
 ---
 
-Este projeto visa aplicar os conhecimentos adquiridos em design de interfaces, usabilidade, responsividade e manipulação do DOM com JavaScript puro, focando na criação de uma experiência de usuário positiva e inclusiva.
+Este projeto não apenas aplica os conhecimentos técnicos em design de interfaces, usabilidade e manipulação do DOM com JavaScript puro, mas também tem como missão gerar impacto social. O SimplesHC foi concebido para enfrentar um problema real de saúde pública: o alto índice de faltas em teleconsultas, especialmente entre pacientes com baixa familiaridade com tecnologia. A plataforma propõe uma solução educativa e acessível, que orienta o paciente de forma visual, clara e humanizada, promovendo inclusão digital e fortalecendo o vínculo entre o cidadão e o serviço de saúde pública. Nossa meta é tornar o cuidado em saúde mais acessível, eficiente e acolhedor.
