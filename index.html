@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimplesHC - Simplificando o acesso à saúde</title>
+    <link rel="shortcut icon" href="./assets/img/icons/icone-site.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/guia-interativo.css">
+    <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/guia-interativo.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div>
+                <a href="#" class="logo">
+                    <img src="./assets/img/imagem-index/imagem-logo.jpeg" alt="Logo SimplesHC">
+                    <span>SimplesHC</span>
+                </a>   
+            </div>
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+                <img src="./assets/img/icons/icone-botao.png" alt="Menu" class="menu-icon-img">
+            </button>
+            <nav id="primary-navigation" aria-hidden="true">
+                <ul>
+                    <li><a href="#" class="active">Início</a></li>
+                    <li><a href="./assets/paginas/hospitais.html">Hospitais</a></li>
+                    <li><a href="./assets/paginas/servicos.html">Serviços</a></li>
+                    <li><a href="./assets/paginas/integrantes.html">Integrantes</a></li>
+                    <li><a href="./assets/paginas/faq.html">FAQ</a></li>
+                    <li><a href="./assets/paginas/contato.html">Contato</a></li>
+                    <li class="nav-item-login"><a href="./assets/paginas/area-paciente/meu-perfil.html" class="btn-nav-login">Entrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" 
+                 data-guide-step="1" 
+                 data-guide-title="Bem-vindo ao SimplesHC!" 
+                 data-guide-text="Esta é a nossa seção principal, onde você encontra um resumo do nosso propósito e botões de acesso rápido."
+                 data-guide-arrow="down">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Simplificando o acesso à saúde</h1>
+                    <p>O SimplesHC torna mais fácil o acesso aos serviços do Hospital das Clínicas para todos os pacientes, especialmente para os idosos.</p>
+                    <div class="hero-buttons" 
+                         data-guide-step="2" 
+                         data-guide-title="Ações Rápidas" 
+                         data-guide-text="Use estes botões para acessar sua área ou conhecer nossas unidades."
+                         data-guide-arrow="up">
+                        <a href="./assets/paginas/area-paciente/meu-perfil.html" class="btn btn-primary">Acesse sua área de paciente</a>
+                        <a href="./assets/paginas/hospitais.html#lista-unidades" class="btn btn-secondary">Conheça nossas unidades</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="./assets/img/imagem-index/medica.png" alt="Profissional de saúde utilizando um laptop em um ambiente moderno">
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="./assets/img/imagem-index/imagem-exames.png" alt="ícone exames">
+                        <h3>Exames Online</h3>
+                        <p>Acesse seus resultados de exames a qualquer momento, de qualquer lugar, com total segurança.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="./assets/img/imagem-index/imagem-agendamento.png" alt="ícone agendamento">
+                        <h3>Agendamento Fácil</h3>
+                        <p>Marque consultas e exames de forma simples e rápida, sem filas ou telefonemas.</p>
+                    </div>
+                    <div class="service-card">
+                        <img src="./assets/img/imagem-index/imagem-teleconsulta.png" alt="ícone teleconsulta">
+                        <h3>Teleconsulta</h3>
+                        <p>Consulte-se com especialistas sem sair de casa, através de videochamadas seguras.</p>
+                    </div>
+                </div>
+                <a href="./assets/paginas/servicos.html" class="view-all-services">Ver todos os serviços →</a>
+            </div>
+        </section>
+
+        <section id="guide-interactive-section">
+            <div class="container guide-content">
+                <div class="guide-image">
+                    <img src="./assets/img/imagem-index/medico.png" alt="Guia interativo">
+                </div>
+                <div class="guide-text">
+                    <h2>Guia Interativo</h2>
+                    <p>Nossa plataforma conta com um assistente que ajuda você a navegar pelo sistema, explicando cada função e recurso disponível.</p>
+                    <div class="accessibility-features">
+                        <h4>Recursos de acessibilidade</h4>
+                        <ul>
+                            <li>Aumento de fonte para melhor leitura</li>
+                            <li>Narração de textos para pessoas com dificuldade visual</li>
+                            <li>Interface simplificada e intuitiva</li>
+                            <li>Contraste aprimorado para facilitar a visualização</li>
+                        </ul>
+                    </div>
+                    <a href="./assets/paginas/faq.html" class="btn btn-primary">Ver perguntas frequentes</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2>O que dizem nossos pacientes</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="initials">RS</div>
+                        <h4>Roberto Silva</h4>
+                        <span>Paciente há 3 anos</span>
+                        <p>"O SimplesHC tornou muito mais fácil acessar meus exames e agendar consultas. Não preciso mais ir ao hospital só para buscar resultados."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="initials">AP</div>
+                        <h4>Ana Paula</h4>
+                        <span>Paciente há 1 ano</span>
+                        <p>"A função de teleconsulta é excelente para minha mãe idosa, que tem dificuldade de locomoção. Agora ela consegue falar com o médico sem sair de casa."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="initials">JO</div>
+                        <h4>João Oliveira</h4>
+                        <span>Paciente há 2 anos</span>
+                        <p>"O guia interativo me ajudou muito a entender como usar o sistema. Mesmo não tendo muita experiência com tecnologia, consegui aprender rapidamente."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column about">
+                <h3>SimplesHC</h3>
+                <p>Simplificando o acesso à saúde para todos.</p>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="./assets/img/icons/icone-youtube.png" alt="Ícone Youtube"></a> 
+                    <a href="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="./assets/img/icons/icone-instagram.png" alt="Ícone Instagram"></a>
+                    <a href="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="./assets/img/icons/icone-twitter.png" alt="Ícone Twitter"></a>
+                </div>
+            </div>
+            <div class="footer-column links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="./assets/paginas/hospitais.html">Hospitais</a></li>
+                    <li><a href="./assets/paginas/servicos.html">Serviços</a></li>
+                    <li><a href="./assets/paginas/integrantes.html">Integrantes</a></li>
+                    <li><a href="./assets/paginas/faq.html">FAQ</a></li>
+                    <li><a href="./assets/paginas/contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column links">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="./assets/paginas/area-paciente/meus-exames.html">Resultados de Exames</a></li>
+                    <li><a href="./assets/paginas/area-paciente/minhas-receitas.html">Receitas Médicas</a></li>
+                    <li><a href="./assets/paginas/area-paciente/minhas-consultas.html">Agendamento</a></li>
+                    <li><a href="./assets/paginas/area-paciente/minhas-consultas.html">Teleconsulta</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact">
+                <h4>Contato</h4>
+                <p>HC Hospital das Clínicas</p>
+                <p>Rua Dr. Ovídio Pires de Campos, 225</p>
+                <p>São Paulo - SP</p>
+                <p>CEP 05403-010</p>
+                <p>Telefone: (11) 2661-0000</p>
+                <p>Email: contato@simplify-hc.com.br</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 SimplesHC. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="#" class="floating-btn accessibility-btn" id="toggleGuideFloatingButton" role="button" aria-label="Guia Interativo">♿</a>
+    </div>
+</body>
+</html>
