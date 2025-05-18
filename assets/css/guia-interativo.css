@@ -1,0 +1,183 @@
+/* assets/css/guia-interativo.css */
+
+/*Não rolar a página enquanto estiver no guia interativo*/
+body.guide-active-no-scroll {
+    overflow: hidden !important;
+}
+
+/* Overlay Principal do Guia */
+#guide-interactive-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.05); /* Fundo escuro translúcido */
+    z-index: 10000; /* Bem alto para ficar sobre outros elementos */
+    display: none; /* Controlado por JS (.active) */
+    /* display: flex; */ /* Usaremos flex para centralizar o balão se não houver alvo */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+#guide-interactive-overlay.active {
+    display: block; /* Ou flex, se for centralizar o balão por padrão */
+}
+
+.guide-video-container {
+    width: 100%;
+    margin-bottom: 15px; /* Espaço entre o vídeo e o título/texto abaixo */
+    background-color: #000; /* Fundo preto para a área do vídeo, caso o vídeo não preencha 100% ou tenha bordas */
+    border-radius: 6px; /* Bordas arredondadas se o vídeo não preencher 100% */
+    overflow: hidden; /* Garante que o iframe/video não ultrapasse as bordas do container */
+    line-height: 0; /* Ajuda a remover espaço extra se o iframe for tratado como inline-block por padrão */
+}
+
+.guide-video-container iframe,
+.guide-video-container video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantém a proporção 16:9 para vídeos responsivos */
+    border: none; /* Remove bordas do iframe */
+}
+
+/* Balão de Informações do Passo */
+.guide-interactive-step-balloon {
+    position: absolute; /* Posicionado pelo JS dentro do overlay */
+    background-color: #ffffff;
+    color: #333333;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    max-width: 380px;
+    width: 90%; /* Responsivo em telas menores */
+    z-index: 10001; /* Acima do overlay, mas abaixo de modais super críticos, se houver */
+    border-top: 5px solid #007bff; /* Destaque azul */
+    font-size: 16px; /* Tamanho de fonte base para o balão */
+    line-height: 1.6;
+}
+
+.guide-interactive-step-balloon h4 {
+    font-size: 1.25em; /* 20px se base é 16px */
+    color: #0056b3; /* Azul mais escuro para o título */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.guide-interactive-step-balloon p.guide-text {
+    margin-bottom: 20px;
+    font-size: 0.9375em; /* 15px se base é 16px */
+}
+
+/* Seta do Balão */
+.guide-interactive-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    border-color: transparent; /* Base transparente */
+}
+
+.guide-interactive-arrow.up { /* Seta aponta para CIMA (balão ABAIXO do elemento) */
+    border-width: 0 12px 14px 12px;
+    border-bottom-color: #ffffff; /* Cor do balão */
+    bottom: 100%; /* Posiciona no topo do balão, apontando para fora */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.guide-interactive-arrow.down { /* Seta aponta para BAIXO (balão ACIMA do elemento) */
+    border-width: 14px 12px 0 12px;
+    border-top-color: #007bff; /* Cor da borda superior do balão */
+    top: 100%; /* Posiciona na base do balão, apontando para fora */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.guide-interactive-arrow.left { /* Seta aponta para ESQUERDA (balão à DIREITA do elemento) */
+    border-width: 12px 14px 12px 0;
+    border-right-color: #ffffff; /* Cor do balão */
+    right: 100%; /* Posiciona à esquerda do balão */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.guide-interactive-arrow.right { /* Seta aponta para DIREITA (balão à ESQUERDA do elemento) */
+    border-width: 12px 0 12px 14px;
+    border-left-color: #ffffff; /* Cor do balão */
+    left: 100%; /* Posiciona à direita do balão */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Botões de Navegação do Guia */
+.guide-interactive-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid #eeeeee;
+}
+
+.guide-interactive-buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.guide-interactive-buttons button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.guide-interactive-buttons button#guidePrevBtn {
+    background-color: #6c757d; /* Cinza para o botão "Anterior" */
+}
+.guide-interactive-buttons button#guidePrevBtn:hover:not(:disabled) {
+    background-color: #545b62;
+}
+
+.guide-interactive-buttons button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.guide-step-counter {
+    font-size: 0.85em;
+    color: #555555;
+}
+
+/* Link para Pular/Não Mostrar Novamente */
+#guideSkipLink {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85em;
+    color: #007bff;
+    text-decoration: none; /* Sublinhado no hover */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#guideSkipLink:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Estilo para o Elemento Destacado */
+.guide-highlighted-element {
+    position: relative; /* Necessário para z-index e para não quebrar layout de elementos inline */
+    z-index: 10000; /* Mesmo z-index do overlay para que o highlight fique por cima do conteúdo mas não do balão */
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.7), 0 0 20px rgba(0, 123, 255, 0.5);
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+    /* Importante: Evitar background-color aqui para não cobrir o conteúdo do elemento */
+    /* Se o elemento for um link, pode precisar de pointer-events: none para o guia, mas o JS pode tratar isso */
+}
