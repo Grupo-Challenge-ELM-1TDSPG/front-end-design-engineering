@@ -10,46 +10,49 @@ O SimplifyHC é uma plataforma web desenvolvida como parte da disciplina de Fron
 
 O projeto está organizado da seguinte forma:
 
+<pre>
 / (raiz)
 |-- index.html (Página Inicial)
 |-- README.md (Este arquivo)
 |-- assets/
-| |-- css/
-| | |-- style.css (Estilos globais e da página inicial)
-| | |-- area-paciente.css (Estilos para a área logada do paciente)
-| | |-- cadastro-login.css
-| | |-- contato.css
-| | |-- faq.css
-| | |-- guide-interactive.css
-| | |-- hospitais.css
-| | |-- integrantes.css
-| | |-- servicos.css
-| |-- js/
-| | |-- script.js
-| | |-- area-paciente.js
-| | |-- cadastro-login.js
-| | |-- contato.js
-| | |-- dados-pacientes.js
-| | |-- faq.js
-| | |-- guide-interactive.js
-| |-- img/
-| |-- icons/
-| |-- imagem-index/
-| |-- imagens-hospitais/
-| |-- imagens-integrantes/
-| |-- imagens-servicos/
+|   |-- css/
+|   |   |-- style.css (Estilos globais e da página inicial)
+|   |   |-- area-paciente.css (Estilos para a área logada do paciente)
+|   |   |-- cadastro-login.css (Estilos para as páginas de login e cadastro)
+|   |   |-- contato.css (Estilos para a página de contato)
+|   |   |-- faq.css (Estilos para a página de FAQ)
+|   |   |-- guide-interactive.css (Estilos para o Guia Interativo)
+|   |   |-- hospitais.css (Estilos para a página de hospitais/unidades)
+|   |   |-- integrantes.css (Estilos para a página da equipe)
+|   |   |-- servicos.css (Estilos para a página de serviços)
+|   |-- js/
+|   |   |-- script.js (JavaScript geral, como menu mobile)
+|   |   |-- area-paciente.js (Lógica para a área logada do paciente)
+|   |   |-- cadastro-login.js (Lógica para login, cadastro, esqueci senha)
+|   |   |-- contato.js (Lógica para o formulário de contato)
+|   |   |-- dados-pacientes.js (Simulação de banco de dados de pacientes)
+|   |   |-- faq.js (Lógica para o accordion do FAQ)
+|   |   |-- guide-interactive.js (Lógica para o Guia Interativo)
+|   |-- img/
+|       |-- icons/ (Ícones gerais, redes sociais, favicon, etc.)
+|       |-- imagem-index/ (Imagens específicas da página inicial)
+|       |-- imagens-hospitais/ (Imagens para a página de hospitais)
+|       |-- imagens-integrantes/ (Fotos dos integrantes)
+|       |-- imagens-servicos/ (Imagens para a página de serviços)
 |-- paginas/
-| |-- contato.html
-| |-- faq.html
-| |-- hospitais.html
-| |-- integrantes.html
-| |-- servicos.html
-| |-- cadastro-login.html
-| |-- area-paciente/
-| |-- meu-perfil.html
-| |-- meus-exames.html
-| |-- minhas-consultas.html
-| |-- minhas-receitas.html
+|   |-- contato.html
+|   |-- faq.html
+|   |-- hospitais.html
+|   |-- integrantes.html
+|   |-- servicos.html
+|   |-- cadastro-login.html
+|   |-- area-paciente/
+|       |-- meu-perfil.html
+|       |-- meus-exames.html
+|       |-- minhas-consultas.html
+|       |-- minhas-receitas.html
+</pre>
+
 
 ## Tecnologia Utilizada
 
