@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesse sua Conta - SimplesHC</title>
+    <link rel="shortcut icon" href="../img/icons/icone-site.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cadastro-login.css"> 
+    <link rel="stylesheet" href="../css/guia-interativo.css">
+    <script src="../js/script.js" defer></script>
+    <script src="../js/dados-pacientes.js" defer></script>
+    <script src="../js/cadastro-login.js" defer></script>
+    <script src="../js/guia-interativo.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div>
+                <a href="../../index.html" class="logo"> 
+                    <img src="../img/imagem-index/imagem-logo.jpeg" alt="Logo SimplesHC">
+                    <span>SimplesHC</span>
+                </a>
+            </div>
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+                <img src="../img/icons/icone-botao.png" alt="Menu" class="menu-icon-img"> 
+            </button>
+            <nav id="primary-navigation" aria-hidden="true">
+                <ul>
+                    <li><a href="../../index.html">Início</a></li> 
+                    <li><a href="./hospitais.html">Hospitais</a></li>
+                    <li><a href="./servicos.html">Serviços</a></li>
+                    <li><a href="./integrantes.html">Integrantes</a></li>
+                    <li><a href="./faq.html">FAQ</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                    <li class="nav-item-login"><a href="#" class="btn-nav-login active">Entrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="login-main">
+        <div class="login-container">
+
+            <!-- === FORMULÁRIO DE LOGIN (INICIALMENTE VISÍVEL) === -->
+            <section id="login-form-section" class="auth-section active">
+                <div class="auth-card">
+                    <h2>Acesse sua conta</h2>
+                    <p class="auth-subtitle">Entre com suas credenciais para acessar sua área de paciente.</p>
+                    <form id="formLogin">
+                        <div class="form-group">
+                            <label for="loginCpf">CPF</label>
+                            <input type="text" id="loginCpf" name="loginCpf" placeholder="000.000.000-00" required>
+                            <small class="error-message"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginSenha">Senha</label>
+                            <div class="password-wrapper">
+                                <input type="password" id="loginSenha" name="loginSenha" placeholder="Sua senha" required>
+                                <button type="button" class="toggle-password" aria-label="Mostrar senha">👁️</button>
+                            </div>
+                            <small class="error-message"></small>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="lembrarDeMim" name="lembrarDeMim">
+                                Lembrar de mim
+                            </label>
+                            <a href="#" id="linkEsqueciSenha" class="auth-link">Esqueci minha senha</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full-width">Entrar</button>
+                    </form>
+                    <p class="auth-switch">Não tem uma conta? <a href="#" id="linkCadastreSe" class="auth-link">Cadastre-se</a></p>
+                    <div id="loginStatus" class="form-status-message" aria-live="polite"></div>
+                </div>
+            </section>
+
+            <!-- === FORMULÁRIO DE CADASTRO (INICIALMENTE OCULTO) === -->
+            <section id="cadastro-form-section" class="auth-section">
+                <div class="auth-card">
+                    <a href="#" class="back-to-login" id="backToLoginFromCadastro" aria-label="Voltar para login">← Voltar para login</a>
+                    <h2>Criar uma conta</h2>
+                    <p class="auth-subtitle">Preencha o formulário abaixo para se cadastrar no SimplesHC.</p>
+                    
+                    <!-- Indicador de Etapas -->
+                    <div class="stepper">
+                        <div class="step active" data-step="1">1</div>
+                        <div class="step-line"></div>
+                        <div class="step" data-step="2">2</div>
+                        <div class="step-line"></div>
+                        <div class="step" data-step="3">3</div>
+                    </div>
+
+                    <form id="formCadastro">
+                        <!-- Etapa 1: Informações Pessoais -->
+                        <div class="form-step active" data-step="1">
+                            <h3>Informações Pessoais</h3>
+                            <div class="form-group">
+                                <label for="cadastroNomeCompleto">Nome completo*</label>
+                                <input type="text" id="cadastroNomeCompleto" name="cadastroNomeCompleto" placeholder="Digite seu nome completo" required>
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="cadastroCpf">CPF*</label>
+                                <input type="text" id="cadastroCpf" name="cadastroCpf" placeholder="Digite seu CPF" required>
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="dataNascimento">Data de nascimento*</label>
+                                <input type="text" id="dataNascimento" name="dataNascimento" placeholder="dd/mm/yyyy" required>
+                                <small class="error-message"></small>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-full-width next-step">Continuar</button>
+                        </div>
+
+                        <!-- Etapa 2: Informações de Contato -->
+                        <div class="form-step" data-step="2">
+                            <h3>Informações de Contato</h3>
+                            <div class="form-group">
+                                <label for="cadastroEmail">Email*</label>
+                                <input type="email" id="cadastroEmail" name="cadastroEmail" placeholder="Digite seu email" required>
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="cadastroTelefone">Telefone</label>
+                                <input type="tel" id="cadastroTelefone" name="cadastroTelefone" placeholder="(XX) XXXXX-XXXX">
+                            </div>
+                             <p class="form-dica"><strong>Dica:</strong> Cadastre um número de telefone com WhatsApp ou Telegram para receber lembretes de consultas e outras comunicações importantes.</p>
+                            <div class="step-buttons">
+                                <button type="button" class="btn btn-secondary prev-step">Voltar</button>
+                                <button type="button" class="btn btn-primary next-step">Continuar</button>
+                            </div>
+                        </div>
+
+                        <!-- Etapa 3: Definir Senha -->
+                        <div class="form-step" data-step="3">
+                            <h3>Definir Senha</h3>
+                            <div class="form-group">
+                                <label for="cadastroSenha">Senha*</label>
+                                <div class="password-wrapper">
+                                    <input type="password" id="cadastroSenha" name="cadastroSenha" placeholder="Crie uma senha forte" required>
+                                    <button type="button" class="toggle-password" aria-label="Mostrar senha">👁️</button>
+                                </div>
+                                <small class="error-message"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmarSenha">Confirmar senha*</label>
+                                 <div class="password-wrapper">
+                                    <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua senha" required>
+                                    <button type="button" class="toggle-password" aria-label="Mostrar senha">👁️</button>
+                                </div>
+                                <small class="error-message"></small>
+                            </div>
+                            <p class="form-dica security-tip"><strong>Dica de segurança:</strong> Use uma senha com pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas e números.</p>
+                            <div class="step-buttons">
+                                <button type="button" class="btn btn-secondary prev-step">Voltar</button>
+                                <button type="submit" class="btn btn-primary">Criar conta</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="cadastroStatus" class="form-status-message" aria-live="polite"></div>
+                </div>
+            </section>
+
+            <!-- === FORMULÁRIO ESQUECI MINHA SENHA (INICIALMENTE OCULTO) === -->
+            <section id="esqueci-senha-form-section" class="auth-section">
+                <div class="auth-card">
+                    <a href="#" class="back-to-login" id="backToLoginFromEsqueci" aria-label="Voltar para login">← Voltar para login</a>
+                    <h2>Recuperar senha</h2>
+                    <p class="auth-subtitle">Informe seu CPF e email cadastrados para receber instruções de recuperação de senha.</p>
+                    <form id="formEsqueciSenha">
+                        <div class="form-group">
+                            <label for="esqueciCpf">CPF</label>
+                            <input type="text" id="esqueciCpf" name="esqueciCpf" placeholder="Seu CPF cadastrado" required>
+                            <small class="error-message"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="esqueciEmail">Email</label>
+                            <input type="email" id="esqueciEmail" name="esqueciEmail" placeholder="Seu email cadastrado" required>
+                            <small class="error-message"></small>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full-width">Enviar instruções</button>
+                    </form>
+                    <div id="esqueciSenhaStatus" class="form-status-message" aria-live="polite"></div>
+                </div>
+            </section>
+
+             <!-- === TELA DE CADASTRO CONCLUÍDO (INICIALMENTE OCULTO) === -->
+            <section id="cadastro-sucesso-section" class="auth-section">
+                <div class="auth-card text-center">
+                    <img src="../img/icons/icone-check-verde.png" alt="Sucesso" class="success-icon"> 
+                    <h2>Cadastro realizado com sucesso!</h2>
+                    <p class="auth-subtitle">Sua conta no SimplesHC foi criada com sucesso. Agora você pode acessar todos os serviços do Hospital das Clínicas pela plataforma.</p>
+                    <div class="success-actions">
+                        <a href="#" id="goToLoginFromSuccess" class="btn btn-primary btn-full-width">Fazer login</a>
+                        <a href="../../index.html" class="btn btn-secondary btn-full-width">Voltar à página inicial</a> 
+                    </div>
+                    <div class="proximos-passos">
+                        <h3>Próximos passos</h3>
+                        <ol>
+                            <li>Acesse sua conta com o CPF e senha cadastrados</li>
+                            <li>Complete seu perfil adicionando informações de saúde</li>
+                            <li>Agende sua primeira consulta ou exame</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column about">
+                <h3>SimplesHC</h3>
+                <p>Simplificando o acesso à saúde para todos.</p>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-youtube.png" alt="Ícone Youtube"> </a> 
+                    <a href="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-instagram.png" alt="Ícone Instagram"> </a>
+                    <a href="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-twitter.png" alt="Ícone Twitter"> </a>
+                </div>
+            </div>
+            <div class="footer-column links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="./assets/paginas/hospitais.html">Hospitais</a></li>
+                    <li><a href="./assets/paginas/servicos.html">Serviços</a></li>
+                    <li><a href="./assets/paginas/integrantes.html">Integrantes</a></li>
+                    <li><a href="./assets/paginas/faq.html">FAQ</a></li>
+                    <li><a href="./assets/paginas/contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column links">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="./area-paciente/meus-exames.html">Resultados de Exames</a></li>
+                    <li><a href="./area-paciente/minhas-receitas.html">Receitas Médicas</a></li>
+                    <li><a href="./area-paciente/minhas-consultas.html">Agendamento</a></li>
+                    <li><a href="./area-paciente/minhas-consultas.html">Teleconsulta</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact">
+                <h4>Contato</h4>
+                <p>HC Hospital das Clínicas</p>
+                <p>Rua Dr. Ovídio Pires de Campos, 225</p>
+                <p>São Paulo - SP</p>
+                <p>CEP 05403-010</p>
+                <p>Telefone: (11) 2661-0000</p>
+                <p>Email: contato@simplify-hc.com.br</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 SimplesHC. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="#" class="floating-btn accessibility-btn" id="toggleGuideFloatingButton" role="button" aria-label="Guia Interativo">♿</a>
+    </div>
+
+</body>
+</html>
