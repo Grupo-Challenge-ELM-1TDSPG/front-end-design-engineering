@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
     <script src="./assets/js/script.js" defer></script>
     <script src="./assets/js/guia-interativo.js" defer></script>
 </head>
-
 <body>
 
     <header>
@@ -20,53 +18,61 @@
                 <a href="#" class="logo">
                     <img src="./assets/img/imagem-index/imagem-logo.jpeg" alt="Logo SimplesHC">
                     <span>SimplesHC</span>
-                </a>
+                </a>   
             </div>
-            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
-                aria-controls="primary-navigation">
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
                 <img src="./assets/img/icons/icone-botao.png" alt="Menu" class="menu-icon-img">
             </button>
             <nav id="primary-navigation" aria-hidden="true">
                 <ul>
-                    <li data-guide-step="3" data-guide-title="Navegação: Início"
-                        data-guide-text="Clique aqui para voltar à página principal a qualquer momento."
-                        data-guide-arrow="down">
-                        <a href="#" class="active">Início</a>
+                    <li data-guide-step="3"
+                    data-guide-title="Navegação: Início" 
+                    data-guide-text="Clique aqui para voltar à página principal a qualquer momento."
+                    data-guide-arrow="down">
+                    <a href="#" class="active">Início</a>
                     </li>
 
-                    <li data-guide-step="4" data-guide-title="Navegação: Hospitais"
-                        data-guide-text="Conheça nossas unidades hospitalares e encontre a mais próxima de você."
-                        data-guide-arrow="down">
-                        <a href="./assets/paginas/hospitais.html">Hospitais</a>
+                    <li data-guide-step="4"
+                    data-guide-title="Navegação: Hospitais"
+                    data-guide-text="Conheça nossas unidades hospitalares e encontre a mais próxima de você."
+                    data-guide-arrow="down">
+                    <a href="./assets/paginas/hospitais.html">Hospitais</a>
                     </li>
 
-                    <li data-guide-step="5" data-guide-title="Navegação: Serviços"
-                        data-guide-text="Descubra os serviços que oferecemos, como agendamentos, exames online e teleconsultas."
-                        data-guide-arrow="down">
-                        <a href="./assets/paginas/servicos.html">Serviços</a>
+                    <li data-guide-step="5"
+                    data-guide-title="Navegação: Serviços"
+                    data-guide-text="Descubra os serviços que oferecemos, como agendamentos, exames online e teleconsultas."
+                    data-guide-arrow="down">
+                    <a href="./assets/paginas/servicos.html">Serviços</a>
                     </li>
 
-                    <li data-guide-step="6" data-guide-title="Navegação: Integrantes"
-                        data-guide-text="Conheça a equipe por trás do SimplesHC." data-guide-arrow="down">
-                        <a href="./assets/paginas/integrantes.html">Integrantes</a>
+                    <li data-guide-step="6"
+                    data-guide-title="Navegação: Integrantes"
+                    data-guide-text="Conheça a equipe por trás do SimplesHC."
+                    data-guide-arrow="down">
+                    <a href="./assets/paginas/integrantes.html">Integrantes</a>
+                    </li>
+                    
+                    <li data-guide-step="7"
+                    data-guide-title="Navegação: FAQ"
+                    data-guide-text="Encontre respostas para as perguntas mais frequentes sobre nossos serviços e plataforma."
+                    data-guide-arrow="down">
+                    <a href="./assets/paginas/faq.html">FAQ</a>
                     </li>
 
-                    <li data-guide-step="7" data-guide-title="Navegação: FAQ"
-                        data-guide-text="Encontre respostas para as perguntas mais frequentes sobre nossos serviços e plataforma."
-                        data-guide-arrow="down">
-                        <a href="./assets/paginas/faq.html">FAQ</a>
+                    <li data-guide-step="8"
+                    data-guide-title="Navegação: Contato"
+                    data-guide-text="Entre em contato conosco para dúvidas, sugestões ou suporte."
+                    data-guide-arrow="down">
+                    <a href="./assets/paginas/contato.html">Contato</a>
                     </li>
 
-                    <li data-guide-step="8" data-guide-title="Navegação: Contato"
-                        data-guide-text="Entre em contato conosco para dúvidas, sugestões ou suporte."
-                        data-guide-arrow="down">
-                        <a href="./assets/paginas/contato.html">Contato</a>
-                    </li>
-
-                    <li class="nav-item-login" data-guide-step="9" data-guide-title="Acesso à Área do Paciente"
-                        data-guide-text="Clique aqui para fazer login ou se cadastrar e acessar sua área de paciente."
-                        data-guide-arrow="right">
-                        <a href="./assets/paginas/area-paciente/meu-perfil.html" class="btn-nav-login">Entrar</a>
+                    <li class="nav-item-login"
+                    data-guide-step="9"
+                    data-guide-title="Acesso à Área do Paciente"
+                    data-guide-text="Clique aqui para fazer login ou se cadastrar e acessar sua área de paciente."
+                    data-guide-arrow="right">
+                    <a href="./assets/paginas/area-paciente/meu-perfil.html" class="btn-nav-login">Entrar</a>
                     </li>
                 </ul>
             </nav>
@@ -74,30 +80,32 @@
     </header>
 
     <main>
-        <section id="hero" data-guide-step="1" data-guide-title="Bem-vindo ao SimplesHC!"
-            data-guide-text="Esta é a nossa seção principal, onde você encontra um resumo do nosso propósito e botões de acesso rápido."
-            data-guide-arrow="down">
+        <!-- Seção principal de destaque (hero), apresenta o propósito do site e botões de ação rápida -->
+        <section id="hero" 
+                 data-guide-step="1" 
+                 data-guide-title="Bem-vindo ao SimplesHC!" 
+                 data-guide-text="Esta é a nossa seção principal, onde você encontra um resumo do nosso propósito e botões de acesso rápido."
+                 data-guide-arrow="down">
             <div class="container hero-content">
                 <div class="hero-text">
                     <h1>Simplificando o acesso à saúde</h1>
-                    <p>O SimplesHC torna mais fácil o acesso aos serviços do Hospital das Clínicas para todos os
-                        pacientes, especialmente para os idosos.</p>
-                    <div class="hero-buttons" data-guide-step="2" data-guide-title="Ações Rápidas"
-                        data-guide-text="Use estes botões para acessar sua área ou conhecer nossas unidades."
-                        data-guide-arrow="up">
-                        <a href="./assets/paginas/area-paciente/meu-perfil.html" class="btn btn-primary">Acesse sua área
-                            de paciente</a>
-                        <a href="./assets/paginas/hospitais.html#lista-unidades" class="btn btn-secondary">Conheça
-                            nossas unidades</a>
+                    <p>O SimplesHC torna mais fácil o acesso aos serviços do Hospital das Clínicas para todos os pacientes, especialmente para os idosos.</p>
+                    <div class="hero-buttons" 
+                         data-guide-step="2" 
+                         data-guide-title="Ações Rápidas" 
+                         data-guide-text="Use estes botões para acessar sua área ou conhecer nossas unidades."
+                         data-guide-arrow="up">
+                        <a href="./assets/paginas/area-paciente/meu-perfil.html" class="btn btn-primary">Acesse sua área de paciente</a>
+                        <a href="./assets/paginas/hospitais.html#lista-unidades" class="btn btn-secondary">Conheça nossas unidades</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="./assets/img/imagem-index/medica.png"
-                        alt="Profissional de saúde utilizando um laptop em um ambiente moderno">
+                    <img src="./assets/img/imagem-index/medica.png" alt="Profissional de saúde utilizando um laptop em um ambiente moderno">
                 </div>
             </div>
         </section>
 
+        <!-- Seção de apresentação dos principais serviços oferecidos -->
         <section id="services">
             <div class="container">
                 <h2>Nossos Serviços</h2>
@@ -105,8 +113,7 @@
                     <div class="service-card">
                         <img src="./assets/img/imagem-index/imagem-exames.png" alt="ícone exames">
                         <h3>Exames Online</h3>
-                        <p>Acesse seus resultados de exames a qualquer momento, de qualquer lugar, com total segurança.
-                        </p>
+                        <p>Acesse seus resultados de exames a qualquer momento, de qualquer lugar, com total segurança.</p>
                     </div>
                     <div class="service-card">
                         <img src="./assets/img/imagem-index/imagem-agendamento.png" alt="ícone agendamento">
@@ -123,6 +130,7 @@
             </div>
         </section>
 
+        <!-- Seção dedicada ao recursos de acessibilidade -->
         <section id="guide-interactive-section">
             <div class="container guide-content">
                 <div class="guide-image">
@@ -130,22 +138,23 @@
                 </div>
                 <div class="guide-text">
                     <h2>Guia Interativo</h2>
-                    <p>Nossa plataforma conta com um assistente que ajuda você a navegar pelo sistema, explicando cada
-                        função e recurso disponível.</p>
+                    <p>Nossa plataforma conta com um assistente que ajuda você a navegar pelo sistema, explicando cada função e recurso disponível.</p>
                     <div class="accessibility-features">
-                        <h4>Recursos de acessibilidade</h4>
+                        <h4>Recursos de Acessibilidade</h4>
                         <ul>
-                            <li>Aumento de fonte para melhor leitura</li>
-                            <li>Narração de textos para pessoas com dificuldade visual</li>
-                            <li>Interface simplificada e intuitiva</li>
-                            <li>Contraste aprimorado para facilitar a visualização</li>
+                            <li>Interface simplificada e responsiva, adaptada para celulares</li>
+                            <li>Guia interativo para ajudar na navegação passo a passo</li>
+                            <li>Textos diretos e linguagem acessível para usuários com pouca familiaridade digital</li>
+                            <li>Botões e elementos visuais organizados de forma clara e intuitiva</li>
                         </ul>
+
                     </div>
                     <a href="./assets/paginas/faq.html" class="btn btn-primary">Ver perguntas frequentes</a>
                 </div>
             </div>
         </section>
 
+        <!-- Seção de depoimentos de pacientes -->
         <section id="testimonials">
             <div class="container">
                 <h2>O que dizem nossos pacientes</h2>
@@ -154,22 +163,19 @@
                         <div class="initials">RS</div>
                         <h4>Roberto Silva</h4>
                         <span>Paciente há 3 anos</span>
-                        <p>"O SimplesHC tornou muito mais fácil acessar meus exames e agendar consultas. Não preciso
-                            mais ir ao hospital só para buscar resultados."</p>
+                        <p>"O SimplesHC tornou muito mais fácil acessar meus exames e agendar consultas. Não preciso mais ir ao hospital só para buscar resultados."</p>
                     </div>
                     <div class="testimonial-card">
                         <div class="initials">AP</div>
                         <h4>Ana Paula</h4>
                         <span>Paciente há 1 ano</span>
-                        <p>"A função de teleconsulta é excelente para minha mãe idosa, que tem dificuldade de locomoção.
-                            Agora ela consegue falar com o médico sem sair de casa."</p>
+                        <p>"A função de teleconsulta é excelente para minha mãe idosa, que tem dificuldade de locomoção. Agora ela consegue falar com o médico sem sair de casa."</p>
                     </div>
                     <div class="testimonial-card">
                         <div class="initials">JO</div>
                         <h4>João Oliveira</h4>
                         <span>Paciente há 2 anos</span>
-                        <p>"O guia interativo me ajudou muito a entender como usar o sistema. Mesmo não tendo muita
-                            experiência com tecnologia, consegui aprender rapidamente."</p>
+                        <p>"O guia interativo me ajudou muito a entender como usar o sistema. Mesmo não tendo muita experiência com tecnologia, consegui aprender rapidamente."</p>
                     </div>
                 </div>
             </div>
@@ -182,14 +188,9 @@
                 <h3>SimplesHC</h3>
                 <p>Simplificando o acesso à saúde para todos.</p>
                 <div class="social-icons">
-                    <a href="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro"
-                        target="_blank" rel="noopener"><img src="./assets/img/icons/icone-youtube.png"
-                            alt="Ícone Youtube"></a>
-                    <a href="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro"
-                        target="_blank" rel="noopener"><img src="./assets/img/icons/icone-instagram.png"
-                            alt="Ícone Instagram"></a>
-                    <a href="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank"
-                        rel="noopener"><img src="./assets/img/icons/icone-twitter.png" alt="Ícone Twitter"></a>
+                    <a href="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="./assets/img/icons/icone-youtube.png" alt="Ícone Youtube"></a> 
+                    <a href="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="./assets/img/icons/icone-instagram.png" alt="Ícone Instagram"></a>
+                    <a href="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="./assets/img/icons/icone-twitter.png" alt="Ícone Twitter"></a>
                 </div>
             </div>
             <div class="footer-column links">
@@ -227,24 +228,23 @@
         </div>
     </footer>
 
+    <!-- Botão flutuante de acessibilidade para ativar o guia interativo -->
     <div class="floating-buttons">
-        <a href="#" class="floating-btn accessibility-btn" id="toggleGuideFloatingButton" role="button"
-            aria-label="Guia Interativo">♿</a>
+        <a href="#" class="floating-btn accessibility-btn" id="toggleGuideFloatingButton" role="button" aria-label="Guia Interativo">♿</a>
     </div>
-    <!--Alterar no github depois vv-->
+
     <script>
-        window.watsonAssistantChatOptions = {
-            integrationID: "41b39803-622b-419c-a690-8144ae42d17d", // The ID of this integration.
-            region: "us-south", // The region your integration is hosted in.
-            serviceInstanceID: "ba04109b-07dd-469b-bf3a-53a3a71ae680", // The ID of your service instance.
-            onLoad: async (instance) => { await instance.render(); }
-        };
-        setTimeout(function () {
-            const t = document.createElement('script');
-            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
-            document.head.appendChild(t);
-        });
+    window.watsonAssistantChatOptions = {
+        integrationID: "41b39803-622b-419c-a690-8144ae42d17d", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "ba04109b-07dd-469b-bf3a-53a3a71ae680", // The ID of your service instance.
+        onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
     </script>
 </body>
-
 </html>
