@@ -1,0 +1,284 @@
+/* assets/css/cadastro-login.css */
+
+/* =================== ESTILOS GLOBAIS PARA A PÁGINA LOGIN (MOBILE FIRST - Base < 600px) =================== */
+body.login-page-active {
+    background-color: #f0f4f8;
+}
+
+.login-main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 70px); /* Altura do header (aprox) */
+    padding: 20px 0; /* Padding menor para telas extra pequenas */
+}
+
+.login-container {
+    width: 90%; /* Mais responsivo em telas muito pequenas */
+    max-width: 420px; /* Largura máxima inicial */
+}
+
+.auth-section { display: none; }
+.auth-section.active { display: block; }
+
+.auth-card {
+    background-color: #fff;
+    padding: 20px; /* Padding menor para mobile */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+.auth-card.text-center { text-align: center; }
+
+.auth-card h2 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 10px;
+    font-size: 1.4em; /* Título menor para mobile */
+}
+.auth-subtitle {
+    text-align: center;
+    color: #4b5563;
+    font-size: 0.85em; /* Subtítulo menor para mobile */
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.back-to-login {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #007bff;
+    font-size: 0.85em;
+    text-decoration: none;
+}
+.back-to-login:hover { text-decoration: underline; }
+
+/* Formulários */
+.form-group { margin-bottom: 15px; } /* Menos margem */
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #374151;
+    font-size: 0.8em;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    padding: 9px 10px; /* Padding menor nos inputs */
+    font-size: 0.9em; /* Fonte menor nos inputs */
+    /* Outros estilos de input permanecem */
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    color: #1f2937;
+    background-color: #f9fafb;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    outline: none;
+    background-color: #fff;
+}
+.password-wrapper { position: relative; display: flex; align-items: center; }
+.password-wrapper input { padding-right: 38px !important; }
+.toggle-password {
+    right: 1px; top: 1px; bottom: 1px;
+    width: 36px; /* Ajustado */
+    font-size: 1.1em; /* Ajustado */
+    /* Outros estilos do toggle permanecem */
+    position: absolute; background: transparent; border: none;
+    padding: 0 8px; cursor: pointer; color: #6b7280;
+    display: flex; align-items: center; justify-content: center;
+}
+.toggle-password:hover { color: #374151; }
+
+.form-options {
+    margin-bottom: 18px;
+    font-size: 0.75em; /* Opções menores */
+    /* Outros estilos de form-options permanecem */
+    display: flex; justify-content: space-between; align-items: center;
+}
+.checkbox-label { display: flex; align-items: center; color: #4b5563; cursor: pointer; }
+.checkbox-label input[type="checkbox"] { margin-right: 5px; accent-color: #007bff; }
+.auth-link { color: #007bff; text-decoration: none; }
+.auth-link:hover { text-decoration: underline; }
+
+.btn-full-width {
+    padding-top: 10px; padding-bottom: 10px;
+    font-size: 0.9em; /* Botão menor */
+    /* Outros estilos do btn-full-width permanecem */
+    width: 100%;
+}
+.auth-switch {
+    margin-top: 18px;
+    font-size: 0.85em;
+    /* Outros estilos do auth-switch permanecem */
+    text-align: center; color: #4b5563;
+}
+.form-status-message {
+    padding: 10px; font-size: 0.85em;
+    /* Outros estilos do form-status-message permanecem */
+    margin-top: 15px; border-radius: 6px;
+    text-align: center; border-width: 1px; border-style: solid;
+}
+.form-status-message.success { background-color: #e6fffa; color: #004d40; border-color: #99f6e4; }
+.form-status-message.error { background-color: #ffebee; color: #c62828; border-color: #ffcdd2; }
+.form-status-message:empty { display: none; }
+
+.error-message {
+    font-size: 0.75em; margin-top: 4px;
+    /* Outros estilos do error-message permanecem */
+    display: block; color: #c62828; min-height: 1.2em; 
+}
+.form-group input.invalid, .form-group select.invalid, .form-group textarea.invalid {
+    border-color: #c62828;
+}
+.form-group input.invalid:focus, .form-group select.invalid:focus, .form-group textarea.invalid:focus {
+    box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.15);
+}
+
+/* Stepper do Cadastro */
+.stepper {
+    margin-bottom: 20px;
+    padding: 0 2%; /* Padding menor para mobile */
+    /* Outros estilos do stepper permanecem */
+    display: flex; align-items: center; justify-content: space-between;
+}
+.step {
+    width: 26px; height: 26px;
+    font-size: 0.8em;
+    /* Outros estilos do step permanecem */
+    border-radius: 50%; background-color: #e2e8f0; color: #64748b;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: bold; transition: background-color 0.3s, color 0.3s;
+    position: relative; z-index: 1;
+}
+.step.active { background-color: #007bff; color: #fff; }
+.step.completed { background-color: #005c99; color: #fff; }
+.step-line {
+    /* Estilos da linha do stepper permanecem */
+    flex-grow: 1; height: 2px; background-color: #e2e8f0;
+    margin: 0 -1px;
+}
+.stepper .step.active ~ .step-line,
+.stepper .step.completed ~ .step-line { background-color: #007bff; }
+
+.form-step { display: none; }
+.form-step.active { display: block; }
+.form-step h3 {
+    font-size: 1.15em; /* Título da etapa menor para mobile */
+    margin-bottom: 15px;
+    /* Outros estilos do h3 da etapa permanecem */
+    text-align: center; color: #1a237e;
+}
+.step-buttons {
+    display: flex;
+    flex-direction: column; /* Botões empilhados por padrão */
+    gap:10px;
+    margin-top: 20px;
+}
+.step-buttons .btn { width:100%; }
+
+.form-dica {
+    font-size: 0.75em; /* Dica menor */
+    padding: 8px; margin-top: 12px;
+    /* Outros estilos da dica permanecem */
+    color: #4b5563; background-color: #f8fafc;
+    border-radius: 4px; border-left: 3px solid #cbd5e1;
+}
+.security-tip { border-left-color: #facc15; background-color: #fffbeb; }
+
+/* Cadastro Sucesso */
+.success-icon { width: 50px; height: 50px; margin: 0 auto 15px auto; }
+.success-actions { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+.proximos-passos {
+    margin-top: 20px; padding: 12px;
+    /* Outros estilos permanecem */
+    text-align: left; background-color: #f8fafc;
+    border-radius: 6px; border: 1px solid #e2e8f0;
+}
+.proximos-passos h3 { font-size: 1em; margin-bottom: 8px; /* Menor para mobile */
+    /* Outros estilos permanecem */
+    color: #1a237e; text-align: center;
+}
+.proximos-passos ol { list-style-position: inside; padding-left: 0; }
+.proximos-passos li { font-size: 0.8em; margin-bottom: 6px; /* Menor para mobile */
+    /* Outros estilos permanecem */
+    color: #374151; padding-left: 5px;
+}
+.proximos-passos li::marker { font-weight: bold; color: #007bff; }
+
+
+/* =================== MEDIA QUERIES ESPECÍFICOS PARA cadastro-login.css =================== */
+
+/* Extra Small devices (phones, 600px and down) - Esta é a base, mas podemos refinar se necessário */
+@media (max-width: 360px) { /* Para telas realmente pequenas */
+    .login-container { width: 95%; }
+    .auth-card { padding: 15px; }
+    .auth-card h2 { font-size: 1.3em; }
+    .auth-subtitle { font-size: 0.8em; }
+    .form-options { font-size: 0.7em; }
+    .stepper { padding: 0; } /* Sem padding lateral no stepper */
+    .step { width: 24px; height: 24px; font-size: 0.75em; }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {
+    .login-main { padding: 30px 0; } /* Padding padrão para small */
+    .login-container { max-width: 460px; } /* Largura do card para small */
+    .auth-card { padding: 25px; }
+    .auth-card h2 { font-size: 1.5em; }
+    .auth-subtitle { font-size: 0.9em; margin-bottom: 22px; }
+    .form-group label { font-size: 0.85em; }
+    .form-group input, .form-group select, .form-group textarea { font-size: 0.95em; padding: 10px 12px; }
+    .form-options { font-size: 0.8em; margin-bottom: 20px; }
+    .btn-full-width { font-size: 0.95em; }
+    .auth-switch { margin-top: 22px; }
+    .stepper { padding: 0 8%; margin-bottom: 22px; }
+    .step { width: 28px; height: 28px; font-size: 0.85em; }
+    .form-step h3 { font-size: 1.2em; margin-bottom: 18px; }
+    .step-buttons { flex-direction: row; justify-content: space-between; } /* Botões lado a lado */
+    .step-buttons .btn { width: 48%; }
+    .success-icon { width: 55px; height: 55px; margin-bottom: 18px; }
+    .proximos-passos h3 { font-size: 1.05em; }
+    .proximos-passos li { font-size: 0.85em; }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+    .login-main { padding: 40px 0; }
+    .login-container { max-width: 480px; } /* Mantém uma boa largura para tablets */
+    .auth-card { padding: 30px; }
+    .auth-card h2 { font-size: 1.6em; margin-bottom: 12px; }
+    .auth-subtitle { font-size: 0.95em; margin-bottom: 25px; }
+    .form-group label { font-size: 0.9em; }
+    .form-group input, .form-group select, .form-group textarea { font-size: 1em; }
+    .form-options { font-size: 0.85em; }
+    .btn-full-width { font-size: 1em; }
+    .auth-switch { margin-top: 25px; font-size: 0.9em; }
+    .stepper { padding: 0 10%; margin-bottom: 25px; }
+    .step { width: 30px; height: 30px; font-size: 0.9em; }
+    .form-step h3 { font-size: 1.3em; margin-bottom: 20px; }
+    .success-icon { width: 60px; height: 60px; margin-bottom: 20px; }
+    .proximos-passos h3 { font-size: 1.1em; }
+    .proximos-passos li { font-size: 0.9em; }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {
+    .login-container { max-width: 500px; } /* Pode aumentar um pouco se o design permitir */
+    .auth-card { padding: 35px; }
+    /* Tamanhos de fonte e espaçamentos podem ser os mesmos do medium ou levemente ajustados se necessário */
+}
+
+/* Extra-Large devices (large laptops and desktops, 1300px and up) */
+@media (min-width: 1300px) {
+    .login-container { max-width: 520px; }
+    .auth-card { padding: 40px; }
+    /* Ajustes finos para telas muito grandes, se necessário */
+}
