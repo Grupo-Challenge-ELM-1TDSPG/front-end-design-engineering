@@ -1,0 +1,17 @@
+# Ignora arquivos temporários
+*.log
+*.tmp
+
+# Ignora backups
+*.bak
+
+# Ignora arquivos pessoais
+*.psd
+*.zip
+
+# Ignora arquivos de sistema (Windows/macOS)
+Thumbs.db
+.DS_Store
+
+#Ignora arquivos de configuração
+.vscode/
