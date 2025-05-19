@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossas Unidades - SimplesHC</title>
+    <link rel="shortcut icon" href="../img/icons/icone-site.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/hospitais.css">
+    <link rel="stylesheet" href="../css/guia-interativo.css">
+    <script src="../js/script.js" defer></script>
+    <script src="../js/guia-interativo.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div>
+                <a href="../../index.html" class="logo">
+                    <img src="../img/imagem-index/imagem-logo.jpeg" alt="Logo SimplesHC">
+                    <span>SimplesHC</span>
+                </a>   
+            </div>
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+                <img src="../img/icons/icone-botao.png" alt="Menu" class="menu-icon-img">
+            </button>
+            <nav id="primary-navigation" aria-hidden="true">
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="#" class="active">Hospitais</a></li>
+                    <li><a href="../paginas/servicos.html">Serviços</a></li>
+                    <li><a href="../paginas/integrantes.html">Integrantes</a></li>
+                    <li><a href="../paginas/faq.html">FAQ</a></li>
+                    <li><a href="../paginas/contato.html">Contato</a></li>
+                    <li class="nav-item-login"><a href="../paginas/area-paciente/meu-perfil.html" class="btn-nav-login">Entrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção de introdução às unidades hospitalares -->
+        <section id="unidades-hero"
+                 data-guide-step="1"
+                 data-guide-title="Bem-vindo às Nossas Unidades"
+                 data-guide-text="Esta seção apresenta uma visão geral das nossas unidades hospitalares."
+                 data-guide-arrow="down">
+            <div class="container">
+                <h2>Nossas Unidades</h2>
+                <p>Conheça as unidades do Hospital das Clínicas e escolha a mais próxima de você.</p>
+            </div>
+        </section>
+
+        <!-- Mapa interativo das unidades, com iframe do Google Maps -->
+        <section id="mapa-unidades"
+                 data-guide-step="2"
+                 data-guide-title="Mapa Interativo"
+                 data-guide-text="Utilize o mapa para visualizar a localização de todas as nossas unidades e planejar sua rota."
+                 data-guide-arrow="down">
+            <div class="container">
+                <div class="map-placeholder">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1493.9251962264836!2d-46.67025976576064!3d-23.558067770266657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59b00d3aa487%3A0xfe715b43e354f823!2sHospital%20das%20Cl%C3%ADnicas%20FMUSP!5e0!3m2!1spt-BR!2sbr!4v1747314059376!5m2!1spt-BR!2sbr" allowfullscreen="" title="Mapa do Hospital das Clínicas FMUSP"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lista de unidades hospitalares em formato de cards -->
+        <section id="lista-unidades"
+                 data-guide-step="3"
+                 data-guide-title="Detalhes das Unidades"
+                 data-guide-text="Explore os cards abaixo para encontrar informações detalhadas sobre cada unidade, como endereço, telefone e horários de funcionamento."
+                 data-guide-arrow="up">
+            <div class="container">
+                <div class="unidades-grid">
+                    <!-- Card de Unidade 1 -->
+                    <div class="unidade-card"
+                         data-guide-step="4"
+                         data-guide-title="IMREA Vila Mariana"
+                         data-guide-text="Esta é a unidade IMREA da Vila Mariana. Clique em 'Ver no mapa' para rotas."
+                         data-guide-arrow="down">
+                        <img src="../img/imagens-hospitais/imrea-vila-mariana.png" class="fachada-hospitais" alt="Fachada IMREA Vila Mariana">
+                        <div class="unidade-card-content">
+                            <h3>IMREA Vila Mariana</h3>
+                            <p><img src="../img/icons/imagem-localizacao.png" alt="ícone localização" class="info-icon"> Rua Domingo de Soto, 100<br>Vila Mariana - São Paulo/SP - CEP: 04026-080</p>
+                            <p><img src="../img/icons/imagem-telefone.png" alt="ícone telefone" class="info-icon"> (11) 5549-0111</p>
+                            <p><img src="../img/icons/imagem-horario.png" alt="ícone horário" class="info-icon"> Segunda a Sexta: 7h às 19h</p>
+                            <a href="https://maps.app.goo.gl/yJ8ErztdASvJBuz17" class="btn-ver-no-mapa" target="_blank" rel="noopener">Ver no mapa <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Card de Unidade 2 -->
+                    <div class="unidade-card"
+                         data-guide-step="5"
+                         data-guide-title="IMREA Umarizal"
+                         data-guide-text="Esta é a unidade IMREA da Umarizal. Clique em 'Ver no mapa' para rotas."
+                         data-guide-arrow="down">
+                        <img src="../img/imagens-hospitais/imrea-umarizal.png" class="fachada-hospitais" alt="Fachada IMREA Umarizal">
+                        <div class="unidade-card-content">
+                            <h3>IMREA Umarizal</h3>
+                            <p><img src="../img/icons/imagem-localizacao.png" alt="ícone localização" class="info-icon"> Rua Guaramembé, 589<br>Umarizal - São Paulo/SP - CEP: 05754-060</p>
+                            <p><img src="../img/icons/imagem-telefone.png" alt="ícone telefone" class="info-icon"> (11) 3719-6060</p>
+                            <p><img src="../img/icons/imagem-horario.png" alt="ícone horário" class="info-icon"> Segunda a Sexta: 7h às 19h</p>
+                            <a href="https://maps.app.goo.gl/qSQCG7WwCpAy47w89" class="btn-ver-no-mapa" target="_blank" rel="noopener">Ver no mapa <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+
+                    <!-- Card de Unidade 3 -->
+                    <div class="unidade-card"
+                         data-guide-step="6"
+                         data-guide-title="IMREA Lapa"
+                         data-guide-text="Esta é a unidade IMREA da Lapa. Clique em 'Ver no mapa' para rotas."
+                         data-guide-arrow="down">
+                        <img src="../img/imagens-hospitais/imrea-lapa.png" class="fachada-hospitais" alt="Fachada IMREA Lapa">
+                        <div class="unidade-card-content">
+                            <h3>IMREA Lapa</h3>
+                            <p><img src="../img/icons/imagem-localizacao.png" alt="ícone localização" class="info-icon"> Rua Guaicurus, 1274<br>Lapa - São Paulo/SP - CEP: 05033-002</p>
+                            <p><img src="../img/icons/imagem-telefone.png" alt="ícone telefone" class="info-icon"> (11) 3838-7555</p>
+                            <p><img src="../img/icons/imagem-horario.png" alt="ícone horário" class="info-icon"> Segunda a Sexta: 7h às 19h</p>
+                            <a href="https://maps.app.goo.gl/R3sU1STb2zPuhboR6" class="btn-ver-no-mapa" target="_blank" rel="noopener">Ver no mapa <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+                     <!-- Card de Unidade 4 -->
+                     <div class="unidade-card"
+                          data-guide-step="7"
+                          data-guide-title="IMREA Clínicas"
+                          data-guide-text="Esta é a unidade IMREA da Clínicas. Clique em 'Ver no mapa' para rotas."
+                          data-guide-arrow="down">
+                        <img src="../img/imagens-hospitais/imrea-clinicas.jpg" class="fachada-hospitais" alt="Fachada IMREA Clínicas">
+                        <div class="unidade-card-content">
+                            <h3>IMREA Clínicas</h3>
+                            <p><img src="../img/icons/imagem-localizacao.png" alt="ícone localização" class="info-icon"> Rua Particular - Portão 3 do INRAD<br>Cerqueira César - São Paulo/SP - CEP: 05403-010</p>
+                            <p><img src="../img/icons/imagem-telefone.png" alt="ícone telefone" class="info-icon"> (11) 2661-1000</p>
+                            <p><img src="../img/icons/imagem-horario.png" alt="ícone horário" class="info-icon"> Segunda a Sexta: 7h às 19h</p>
+                            <a href="https://maps.app.goo.gl/ok3phCwsGKuYQLFL6" class="btn-ver-no-mapa" target="_blank" rel="noopener">Ver no mapa <span class="arrow-icon">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção com informações gerais sobre atendimento, documentos e agendamento -->
+        <section id="informacoes-gerais"
+                 data-guide-step="8"
+                 data-guide-title="Informações Gerais Importantes"
+                 data-guide-text="Leia estas informações sobre atendimento, documentos necessários e como funciona o agendamento em nossas unidades."
+                 data-guide-arrow="up">
+            <div class="container">
+                <div class="info-gerais-content">
+                    <h2>Informações Gerais</h2>
+                    
+                    <h3>Atendimento</h3>
+                    <p>O Hospital das Clínicas da FMUSP oferece atendimento em diversas especialidades médicas. Os pacientes são atendidos mediante encaminhamento da rede pública de saúde, através do sistema CROSS (Central de Regulação de Ofertas de Serviços de Saúde).</p>
+
+                    <h3>Documentos Necessários</h3>
+                    <ul>
+                        <li>Cartão SUS</li>
+                        <li>Documento de identidade com foto (RG ou CNH)</li>
+                        <li>CPF</li>
+                        <li>Comprovante de residência</li>
+                        <li>Encaminhamento médico (quando aplicável)</li>
+                    </ul>
+
+                    <h3>Agendamento</h3>
+                    <p>O agendamento de consultas e exames pode ser realizado através da central telefônica ou pelo site/aplicativo SimplesHC, onde você também pode acompanhar seus resultados e histórico médico.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column about">
+                <h3>SimplesHC</h3>
+                <p>Simplificando o acesso à saúde para todos.</p>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-youtube.png" alt="Ícone Youtube"></a> 
+                    <a href="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-instagram.png" alt="Ícone Instagram"></a>
+                    <a href="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-twitter.png" alt="Ícone Twitter"></a>
+                </div>
+            </div>
+            <div class="footer-column links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="#">Hospitais</a></li>
+                    <li><a href="../paginas/servicos.html">Serviços</a></li>
+                    <li><a href="../paginas/integrantes.html">Integrantes</a></li>
+                    <li><a href="../paginas/faq.html">FAQ</a></li>
+                    <li><a href="../paginas/contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column links">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="./area-paciente/meus-exames.html">Resultados de Exames</a></li>
+                    <li><a href="./area-paciente/minhas-receitas.html">Receitas Médicas</a></li>
+                    <li><a href="./area-paciente/minhas-consultas.html">Agendamento</a></li>
+                    <li><a href="./area-paciente/minhas-consultas.html">Teleconsulta</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact">
+                <h4>Contato</h4>
+                <p>HC Hospital das Clínicas</p>
+                <p>Rua Dr. Ovídio Pires de Campos, 225</p>
+                <p>São Paulo - SP</p>
+                <p>CEP 05403-010</p>
+                <p>Telefone: (11) 2661-0000</p>
+                <p>Email: contato@simplify-hc.com.br</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 SimplesHC. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="#" class="floating-btn accessibility-btn" id="toggleGuideFloatingButton" role="button" aria-label="Guia Interativo">♿</a>
+    </div>
+
+    <script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "41b39803-622b-419c-a690-8144ae42d17d", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "ba04109b-07dd-469b-bf3a-53a3a71ae680", // The ID of your service instance.
+        onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
+    </script>
+</body>
+</html>

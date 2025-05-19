@@ -23,69 +23,31 @@
             <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
                 <img src="./assets/img/icons/icone-botao.png" alt="Menu" class="menu-icon-img">
             </button>
-            <nav id="primary-navigation" aria-hidden="true">
+            <nav id="primary-navigation" aria-hidden="true"
+                    data-guide-step="3"
+                    data-guide-title="Navegação da página"
+                    data-guide-text="Use o menu acima para acessar páginas como Início, Serviços, FAQ e mais."
+                    data-guide-arrow="down">
                 <ul>
-                    <li data-guide-step="3" 
-                    data-guide-title="Navegação: Início" 
-                    data-guide-text="Clique aqui para voltar à página principal a qualquer momento."
-                    data-guide-arrow="down">
-                    <a href="#" class="active">Início</a>
-                    </li>
-
-                    <li data-guide-step="4"
-                    data-guide-title="Navegação: Hospitais"
-                    data-guide-text="Conheça nossas unidades hospitalares e encontre a mais próxima de você."
-                    data-guide-arrow="down">
-                    <a href="./assets/paginas/hospitais.html">Hospitais</a>
-                    </li>
-
-                    <li data-guide-step="5"
-                    data-guide-title="Navegação: Serviços"
-                    data-guide-text="Descubra os serviços que oferecemos, como agendamentos, exames online e teleconsultas."
-                    data-guide-arrow="down">
-                    <a href="./assets/paginas/servicos.html">Serviços</a>
-                    </li>
-
-                    <li data-guide-step="6"
-                    data-guide-title="Navegação: Integrantes"
-                    data-guide-text="Conheça a equipe por trás do SimplesHC."
-                    data-guide-arrow="down">
-                    <a href="./assets/paginas/integrantes.html">Integrantes</a>
-                    </li>
-                    
-                    <li data-guide-step="7"
-                    data-guide-title="Navegação: FAQ"
-                    data-guide-text="Encontre respostas para as perguntas mais frequentes sobre nossos serviços e plataforma."
-                    data-guide-arrow="down">
-                    <a href="./assets/paginas/faq.html">FAQ</a>
-                    </li>
-
-                    <li data-guide-step="8"
-                    data-guide-title="Navegação: Contato"
-                    data-guide-text="Entre em contato conosco para dúvidas, sugestões ou suporte."
-                    data-guide-arrow="down">
-                    <a href="./assets/paginas/contato.html">Contato</a>
-                    </li>
-
-                    <li class="nav-item-login"
-                    data-guide-step="9"
-                    data-guide-title="Acesso à Área do Paciente"
-                    data-guide-text="Clique aqui para fazer login ou se cadastrar e acessar sua área de paciente."
-                    data-guide-arrow="right">
-                    <a href="./assets/paginas/area-paciente/meu-perfil.html" class="btn-nav-login">Entrar</a>
-                    </li>
+                    <li><a href="#" class="active">Início</a></li>
+                    <li><a href="./assets/paginas/hospitais.html">Hospitais</a></li>
+                    <li><a href="./assets/paginas/servicos.html">Serviços</a></li>
+                    <li><a href="./assets/paginas/integrantes.html">Integrantes</a></li>
+                    <li><a href="./assets/paginas/faq.html">FAQ</a></li>
+                    <li><a href="./assets/paginas/contato.html">Contato</a></li>
+                    <li><a href="./assets/paginas/area-paciente/meu-perfil.html" class="btn-nav-login">Entrar</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
+        <!-- Seção principal de destaque (hero), apresenta o propósito do site e botões de ação rápida -->
         <section id="hero" 
                  data-guide-step="1" 
                  data-guide-title="Bem-vindo ao SimplesHC!" 
                  data-guide-text="Esta é a nossa seção principal, onde você encontra um resumo do nosso propósito e botões de acesso rápido."
-                 data-guide-arrow="down"
-                 data-guide-video-embed='<iframe width="100%" style="aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube-nocookie.com/embed/aRzWmObeqCE?si=JFMaZoUP6KfbYqj0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'>
+                 data-guide-arrow="down">
             <div class="container hero-content">
                 <div class="hero-text">
                     <h1>Simplificando o acesso à saúde</h1>
@@ -105,6 +67,7 @@
             </div>
         </section>
 
+        <!-- Seção de apresentação dos principais serviços oferecidos -->
         <section id="services">
             <div class="container">
                 <h2>Nossos Serviços</h2>
@@ -129,6 +92,7 @@
             </div>
         </section>
 
+        <!-- Seção dedicada ao recursos de acessibilidade -->
         <section id="guide-interactive-section">
             <div class="container guide-content">
                 <div class="guide-image">
@@ -138,19 +102,21 @@
                     <h2>Guia Interativo</h2>
                     <p>Nossa plataforma conta com um assistente que ajuda você a navegar pelo sistema, explicando cada função e recurso disponível.</p>
                     <div class="accessibility-features">
-                        <h4>Recursos de acessibilidade</h4>
+                        <h4>Recursos de Acessibilidade</h4>
                         <ul>
-                            <li>Aumento de fonte para melhor leitura</li>
-                            <li>Narração de textos para pessoas com dificuldade visual</li>
-                            <li>Interface simplificada e intuitiva</li>
-                            <li>Contraste aprimorado para facilitar a visualização</li>
+                            <li>Interface simplificada e responsiva, adaptada para celulares</li>
+                            <li>Guia interativo para ajudar na navegação passo a passo</li>
+                            <li>Textos diretos e linguagem acessível para usuários com pouca familiaridade digital</li>
+                            <li>Botões e elementos visuais organizados de forma clara e intuitiva</li>
                         </ul>
+
                     </div>
                     <a href="./assets/paginas/faq.html" class="btn btn-primary">Ver perguntas frequentes</a>
                 </div>
             </div>
         </section>
 
+        <!-- Seção de depoimentos de pacientes -->
         <section id="testimonials">
             <div class="container">
                 <h2>O que dizem nossos pacientes</h2>
@@ -224,10 +190,11 @@
         </div>
     </footer>
 
+    <!-- Botão flutuante de acessibilidade para ativar o guia interativo -->
     <div class="floating-buttons">
         <a href="#" class="floating-btn accessibility-btn" id="toggleGuideFloatingButton" role="button" aria-label="Guia Interativo">♿</a>
     </div>
-    <!--Alterar no github depois vv-->
+
     <script>
     window.watsonAssistantChatOptions = {
         integrationID: "41b39803-622b-419c-a690-8144ae42d17d", // The ID of this integration.
