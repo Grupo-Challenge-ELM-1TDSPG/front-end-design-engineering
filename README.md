@@ -61,7 +61,7 @@ O projeto foi desenvolvido utilizando exclusivamente:
 * **CSS3:** Para a estilização e design responsivo, seguindo a abordagem Mobile First.
 * **JavaScript (ES6+):** Para interatividade, manipulação do DOM, validação de formulários e lógica do Guia Interativo.
 
-## Integrantes da Equipe
+## 👥 Integrantes da Equipe
 
 | Nome Completo         | RM     | Turma   | GitHub                                      | LinkedIn                                                       |
 | --------------------- | ------ | ------- | ------------------------------------------- | -------------------------------------------------------------- |
@@ -69,7 +69,7 @@ O projeto foi desenvolvido utilizando exclusivamente:
 | Lucas Barros Gouveia  | 566422 | 1TDSPG  | [LuzBGouveia](https://github.com/LuzBGouveia)       | [Lucas Barros Gouveia](https://www.linkedin.com/in/luz-barros-gouveia-09b147355/) |
 | Milton Marcelino      | 564836 | 1TDSPG  | [MiltonMarcelino](https://github.com/MiltonMarcelino) | [Milton Marcelino](http://linkedin.com/in/milton-marcelino-250298142) |
 
-## 👥 Integrantes da Equipe
+## 👥 Fotos da Equipe
 
 <table>
   <tr>
