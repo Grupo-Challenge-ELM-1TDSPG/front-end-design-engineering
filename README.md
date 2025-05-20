@@ -69,6 +69,29 @@ O projeto foi desenvolvido utilizando exclusivamente:
 | Lucas Barros Gouveia  | 566422 | 1TDSPG  | [LuzBGouveia](https://github.com/LuzBGouveia)       | [Lucas Barros Gouveia](https://www.linkedin.com/in/luz-barros-gouveia-09b147355/) |
 | Milton Marcelino      | 564836 | 1TDSPG  | [MiltonMarcelino](https://github.com/MiltonMarcelino) | [Milton Marcelino](http://linkedin.com/in/milton-marcelino-250298142) |
 
+## 👥 Integrantes da Equipe
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/img/imagens-integrantes/foto-enzo.jpeg" width="100px" alt="Foto de Enzo"/><br/>
+      <strong>Enzo Okuizumi</strong><br/>
+      RM 561432 | 1TDSPG
+    </td>
+    <td align="center">
+      <img src="assets/img/imagens-integrantes/foto-lucas.jpg" width="100px" alt="Foto de Lucas"/><br/>
+      <strong>Lucas Barros Gouveia</strong><br/>
+      RM 566422 | 1TDSPG
+    </td>
+    <td align="center">
+      <img src="assets/img/imagens-integrantes/foto-milton.png" width="100px" alt="Foto de Milton"/><br/>
+      <strong>Milton Marcelino</strong><br/>
+      RM 564836 | 1TDSPG
+    </td>
+  </tr>
+</table>
+
+
 ## Endereço do Repositório do Projeto no GitHub
 
 [https://github.com/Grupo-Challenge-EML-1TDSPG/front-end-design-engineering](https://github.com/Grupo-Challenge-EML-1TDSPG/front-end-design-engineering)
