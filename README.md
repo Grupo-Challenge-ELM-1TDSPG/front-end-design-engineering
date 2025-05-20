@@ -21,7 +21,7 @@ O projeto está organizado da seguinte forma:
 |   |   |-- cadastro-login.css (Estilos para as páginas de login e cadastro)
 |   |   |-- contato.css (Estilos para a página de contato)
 |   |   |-- faq.css (Estilos para a página de FAQ)
-|   |   |-- guide-interactive.css (Estilos para o Guia Interativo)
+|   |   |-- guia-interativo.css (Estilos para o Guia Interativo)
 |   |   |-- hospitais.css (Estilos para a página de hospitais/unidades)
 |   |   |-- integrantes.css (Estilos para a página da equipe)
 |   |   |-- servicos.css (Estilos para a página de serviços)
@@ -32,7 +32,7 @@ O projeto está organizado da seguinte forma:
 |   |   |-- contato.js (Lógica para o formulário de contato)
 |   |   |-- dados-pacientes.js (Simulação de banco de dados de pacientes)
 |   |   |-- faq.js (Lógica para o accordion do FAQ)
-|   |   |-- guide-interactive.js (Lógica para o Guia Interativo)
+|   |   |-- guia-interativo.js (Lógica para o Guia Interativo)
 |   |-- img/
 |       |-- icons/ (Ícones gerais, redes sociais, favicon, etc.)
 |       |-- imagem-index/ (Imagens específicas da página inicial)
