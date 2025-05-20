@@ -1,0 +1,261 @@
+/* =========================
+   Seção Hero da Página de Contato
+   ========================= */
+#contato-hero {
+    background-color: #e9f3fb;
+    padding: 30px 0;
+    text-align: center;
+}
+
+#contato-hero h2 {
+    color: #1a237e;
+    margin-bottom: 10px;
+}
+
+#contato-hero p {
+    font-size: 1em;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* =========================
+   Seção do Formulário e Informações de Contato
+   ========================= */
+#contato-form-section {
+    padding: 30px 0;
+    background-color: #fff;
+}
+
+.contato-layout {
+    display: flex;
+    flex-direction: column;
+    /* Empilhado no mobile */
+    gap: 30px;
+}
+
+/* =========================
+   Formulário de Contato
+   ========================= */
+.form-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    flex: 2;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #374151;
+    font-size: 0.9em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1em;
+    color: #1f2937;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* =========================
+   Validação e Mensagens de Erro
+   ========================= */
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+    border-color: #dc3545;
+}
+
+.form-group input.invalid:focus,
+.form-group select.invalid:focus,
+.form-group textarea.invalid:focus {
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+.error-message {
+    display: block;
+    color: #dc3545;
+    font-size: 0.8em;
+    margin-top: 4px;
+    min-height: 1.2em;
+}
+
+/* =========================
+   Botão e Mensagem de Status do Formulário
+   ========================= */
+.btn-enviar-contato {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1em;
+}
+
+.form-status-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.form-status-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-status-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* =========================
+   Barra Lateral de Informações de Contato
+   ========================= */
+.info-contato-container {
+    background-color: #f9fafb;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    flex: 1;
+}
+
+.info-contato-container h3 {
+    color: #1a237e;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d1d5db;
+}
+
+.info-bloco {
+    margin-bottom: 20px;
+}
+
+.info-bloco:last-child {
+    margin-bottom: 0;
+}
+
+.info-bloco h4 {
+    font-size: 1em;
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.info-bloco p,
+.info-bloco a {
+    font-size: 0.9em;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 3px;
+}
+
+.info-bloco a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.info-bloco a:hover {
+    text-decoration: underline;
+}
+
+.info-redes-sociais {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.info-redes-sociais img {
+    width: 28px;
+    height: 28px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.info-redes-sociais a:hover img {
+    opacity: 1;
+}
+
+/* =========================
+   Responsividade (Media Queries)
+   ========================= */
+@media (max-width: 600px) {
+
+    #contato-hero,
+    #contato-form-section {
+        padding: 20px 0;
+    }
+
+    .form-container,
+    .info-contato-container {
+        padding: 20px;
+    }
+
+    .btn-enviar-contato {
+        font-size: 0.95em;
+    }
+}
+
+@media (min-width: 768px) {
+
+    #contato-hero,
+    #contato-form-section {
+        padding: 40px 0;
+    }
+
+    .contato-layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .btn-enviar-contato {
+        width: auto;
+        display: inline-block;
+    }
+}
+
+@media (min-width: 992px) {
+
+    #contato-hero,
+    #contato-form-section {
+        padding: 50px 0;
+    }
+
+    .form-container,
+    .info-contato-container {
+        padding: 30px;
+    }
+
+    .contato-layout {
+        gap: 40px;
+    }
+}
