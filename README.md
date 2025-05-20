@@ -84,7 +84,7 @@ O projeto foi desenvolvido utilizando exclusivamente:
       RM 566422 | 1TDSPG
     </td>
     <td align="center">
-      <img src="assets/img/imagens-integrantes/foto-milton.png" width="100px" alt="Foto de Milton"/><br/>
+      <img src="assets/img/imagens-integrantes/foto-milton.jpeg" width="100px" alt="Foto de Milton"/><br/>
       <strong>Milton Marcelino</strong><br/>
       RM 564836 | 1TDSPG
     </td>
