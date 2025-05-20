@@ -1,17 +1,26 @@
 // assets/js/guia-interativo.js
 document.addEventListener('DOMContentLoaded', function () {
-    const GUIDE_COMPLETED_KEY = 'simplifyHCGuiaInterativoCompleted_v1';
+
+    const BASE_GUIDE_STORAGE_KEY = 'simplesHCGuiaConcluidoPagina_';
+    const currentPagePath = window.location.pathname;
+    // Cria uma chave mais "limpa" e válida para localStorage
+    const pageKeyPart = currentPagePath.substring(currentPagePath.lastIndexOf('/') + 1).replace(/\.html$|\.htm$/, '').replace(/[^a-zA-Z0-9_-]/g, '_');
+    const GUIDE_COMPLETED_KEY_FOR_CURRENT_PAGE = `${BASE_GUIDE_STORAGE_KEY}${pageKeyPart || 'homepage'}_v1`; // Adiciona 'homepage' se pageKeyPart for vazio (raiz)
+
+
     let guideStepsData = [];
     let currentStepIndex = 0;
 
+    // Elementos do guia
     let guideOverlayEl, guideBalloonEl, guideTitleEl, guideTextEl,
-        guideArrowEl, guidePrevBtn, guideNextBtn, guideSkipLinkEl, guideStepCounterEl;
+        guideArrowEl, guidePrevBtn, guideNextBtn, guideSkipLinkEl, guideStepCounterEl, guideVideoContainerEl;
 
     let highlightedElement = null;
     let originalHighlightedElementStyles = {};
 
     const toggleGuideFloatingButton = document.getElementById('toggleGuideFloatingButton');
 
+    // Coleta os passos do guia a partir dos elementos com data-guide-step
     function collectGuideSteps() {
         guideStepsData = [];
         document.querySelectorAll('[data-guide-step]').forEach(el => {
@@ -27,9 +36,26 @@ document.addEventListener('DOMContentLoaded', function () {
         guideStepsData.sort((a, b) => a.step - b.step);
     }
 
+    // Cria a interface do guia interativo (overlay e balão)
     function createGuideUI() {
         if (document.getElementById('guide-interactive-overlay')) {
-            return; // UI já existe
+            guideOverlayEl = document.getElementById('guide-interactive-overlay');
+            guideBalloonEl = guideOverlayEl.querySelector('.guide-interactive-step-balloon');
+            guideTitleEl = guideOverlayEl.querySelector('h4');
+            guideTextEl = guideOverlayEl.querySelector('p.guide-text');
+            guideArrowEl = guideOverlayEl.querySelector('.guide-interactive-arrow');
+            guidePrevBtn = document.getElementById('guidePrevBtn');
+            guideNextBtn = document.getElementById('guideNextBtn');
+            guideSkipLinkEl = document.getElementById('guideSkipLink');
+            guideStepCounterEl = guideOverlayEl.querySelector('.guide-step-counter');
+            guideVideoContainerEl = guideOverlayEl.querySelector('#guideVideoContainer');
+            guidePrevBtn.removeEventListener('click', prevStep); 
+            guideNextBtn.removeEventListener('click', nextStep);
+            guideSkipLinkEl.removeEventListener('click', skipGuideHandler);
+            guidePrevBtn.addEventListener('click', prevStep);
+            guideNextBtn.addEventListener('click', nextStep);
+            guideSkipLinkEl.addEventListener('click', skipGuideHandler);
+            return;
         }
 
         const guideHTML = `
@@ -67,24 +93,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
         guidePrevBtn.addEventListener('click', prevStep);
         guideNextBtn.addEventListener('click', nextStep);
-        guideSkipLinkEl.addEventListener('click', (e) => {
-            e.preventDefault();
-            skipGuideAndStorePreference();
-        });
+        guideSkipLinkEl.addEventListener('click', skipGuideHandler); // Usar uma função wrapper
     }
 
+    // Wrapper para o skip link para poder usar e.preventDefault()
+    function skipGuideHandler(e) {
+        e.preventDefault();
+        skipGuideAndStorePreference();
+    }
+
+
+    // Posiciona o balão do guia em relação ao elemento destacado
     function positionBalloon(targetElement, arrowDirection = 'down') {
         if (!guideBalloonEl || !guideArrowEl) return;
 
         const balloonRect = guideBalloonEl.getBoundingClientRect();
-        guideArrowEl.className = 'guide-interactive-arrow'; // Reset all arrow classes first
+        guideArrowEl.className = 'guide-interactive-arrow';
 
         let top, left;
-        const gap = 15; // Space between element and balloon
+        const gap = 15; // Espaço entre elemento e balão
 
         if (targetElement) {
             const targetRect = targetElement.getBoundingClientRect();
-            guideArrowEl.classList.add(arrowDirection); // Add specific direction class
+            guideArrowEl.classList.add(arrowDirection);
 
             switch (arrowDirection) {
                 case 'up':
@@ -106,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     break;
             }
 
-            // Viewport adjustments
+            // Ajustes para não sair da tela
             const minMargin = 10;
             if (left < minMargin) {
                 left = minMargin;
@@ -115,34 +146,31 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (top < minMargin) {
-                // If balloon is trying to go off the top
-                // And if it was meant to be above (arrow:down), and there's space below, flip it
                 if (arrowDirection === 'down' && (targetRect.bottom + gap + balloonRect.height < window.innerHeight - minMargin)) {
                     top = targetRect.bottom + gap;
-                    guideArrowEl.className = 'guide-interactive-arrow up'; // Flip arrow
+                    guideArrowEl.className = 'guide-interactive-arrow up';
                 } else {
-                    top = minMargin; // Otherwise, stick to top margin
+                    top = minMargin;
                 }
             } else if (top + balloonRect.height > window.innerHeight - minMargin) {
-                // If balloon is trying to go off the bottom
-                // And if it was meant to be below (arrow:up), and there's space above, flip it
                 if (arrowDirection === 'up' && (targetRect.top - balloonRect.height - gap > minMargin)) {
                     top = targetRect.top - balloonRect.height - gap;
-                    guideArrowEl.className = 'guide-interactive-arrow down'; // Flip arrow
+                    guideArrowEl.className = 'guide-interactive-arrow down';
                 } else {
-                    top = window.innerHeight - balloonRect.height - minMargin; // Otherwise, stick to bottom
+                    top = window.innerHeight - balloonRect.height - minMargin;
                 }
             }
-        } else { // No targetElement, center the balloon
+        } else {
+            // Centraliza se não houver elemento alvo
             top = (window.innerHeight / 2) - (balloonRect.height / 2);
             left = (window.innerWidth / 2) - (balloonRect.width / 2);
-            // No arrow class added, so it remains a simple dot or invisible if styled that way
         }
 
         guideBalloonEl.style.top = `${top}px`;
         guideBalloonEl.style.left = `${left}px`;
     }
 
+    // Remove destaque do elemento anterior e limpa vídeo
     function clearHighlight() {
         if (highlightedElement) {
             highlightedElement.classList.remove('guide-highlighted-element');
@@ -152,20 +180,20 @@ document.addEventListener('DOMContentLoaded', function () {
             originalHighlightedElementStyles = {};
             highlightedElement = null;
         }
+        // Limpa o vídeo também
+        if (guideVideoContainerEl) {
+            guideVideoContainerEl.innerHTML = '';
+            guideVideoContainerEl.style.display = 'none';
+        }
     }
     
-    /**
-     * Helper function to reliably position the balloon after potential DOM changes (like scroll).
-     */
     function _securePositionBalloon(elementToHighlight, arrowPos) {
-        // Use double requestAnimationFrame to ensure layout is stable.
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 positionBalloon(elementToHighlight, arrowPos);
             });
         });
     }
-
 
     function showStep(index) {
         if (index < 0 || index >= guideStepsData.length) {
@@ -175,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentStepIndex = index;
         const stepData = guideStepsData[index];
 
-        clearHighlight(); // Limpa destaque anterior E VÍDEO ANTERIOR
+        clearHighlight(); // Limpa destaque e vídeo ANTES de configurar o novo passo
 
         guideTitleEl.textContent = stepData.title;
         guideTextEl.innerHTML = stepData.text;
@@ -186,7 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         highlightedElement = stepData.element;
 
-        // --- LÓGICA DE CONTROLE DO MENU MOBILE ---
         const navElement = document.querySelector('#primary-navigation');
         const headerElement = document.querySelector('header');
         const menuToggle = document.querySelector('.menu-toggle');
@@ -196,26 +223,21 @@ document.addEventListener('DOMContentLoaded', function () {
             const isMenuOpen = headerElement.classList.contains('menu-open');
 
             if (isMenuOpen && !isTargetInsideNav) {
-                // Se o menu está aberto, MAS o novo alvo NÃO está dentro do menu, FECHA o menu.
                 headerElement.classList.remove('menu-open');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 navElement.setAttribute('aria-hidden', 'true');
             } else if (!isMenuOpen && isTargetInsideNav && window.innerWidth < 992) {
-                // Se o menu está fechado, E o novo alvo ESTÁ dentro do menu, E estamos em tela mobile, ABRE o menu.
                 headerElement.classList.add('menu-open');
                 menuToggle.setAttribute('aria-expanded', 'true');
                 navElement.setAttribute('aria-hidden', 'false');
             }
         }
-        // --- FIM DA LÓGICA DE CONTROLE DO MENU MOBILE ---
 
-        // Renderiza vídeo se houver
         if (guideVideoContainerEl) {
             if (stepData.videoEmbedHTML) {
                 guideVideoContainerEl.innerHTML = stepData.videoEmbedHTML;
                 guideVideoContainerEl.style.display = 'block';
             } else {
-                guideVideoContainerEl.innerHTML = '';
                 guideVideoContainerEl.style.display = 'none';
             }
         }
@@ -230,8 +252,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             highlightedElement.style.zIndex = '10000';
 
-            // Scroll e posicionamento (usando _securePositionBalloon)
-            // Espera um frame para garantir que o menu abriu/fechou antes de posicionar
             requestAnimationFrame(() => {
                 const rect = highlightedElement.getBoundingClientRect();
                 const isElementInView = (
@@ -273,21 +293,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function startInteractiveGuide(forceStart = false) {
         if (guideStepsData.length === 0) {
-            console.warn("Guia Interativo: Nenhum passo definido.");
+            console.warn("Guia Interativo: Nenhum passo definido para esta página.");
             return;
         }
-        const guideCompleted = localStorage.getItem(GUIDE_COMPLETED_KEY);
+        // USA A CHAVE ESPECÍFICA DA PÁGINA
+        const guideCompleted = localStorage.getItem(GUIDE_COMPLETED_KEY_FOR_CURRENT_PAGE);
+
         if (forceStart || guideCompleted !== 'true') {
             if (forceStart) {
-                localStorage.removeItem(GUIDE_COMPLETED_KEY);
+                localStorage.removeItem(GUIDE_COMPLETED_KEY_FOR_CURRENT_PAGE);
             }
-            document.body.classList.add('guide-active-no-scroll'); // Trava rolagem
+            document.body.classList.add('guide-active-no-scroll');
             currentStepIndex = 0;
             showStep(currentStepIndex);
             document.addEventListener('keydown', handleKeyboardNavigation);
             window.addEventListener('resize', handleWindowResize);
         } else {
-            console.log("Guia Interativo já completado.");
+            console.log(`Guia Interativo para a página ${pageKeyPart || 'homepage'} já completado.`);
         }
     }
 
@@ -295,10 +317,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (guideOverlayEl) {
             guideOverlayEl.classList.remove('active');
         }
-        clearHighlight();
-        document.body.classList.remove('guide-active-no-scroll'); // Libera rolagem
+        clearHighlight(); // Limpa destaque e vídeo
+        document.body.classList.remove('guide-active-no-scroll');
         if (markAsCompleted) {
-            localStorage.setItem(GUIDE_COMPLETED_KEY, 'true');
+            // SALVA O STATUS DE "COMPLETO" PARA A PÁGINA ATUAL
+            localStorage.setItem(GUIDE_COMPLETED_KEY_FOR_CURRENT_PAGE, 'true');
         }
         document.removeEventListener('keydown', handleKeyboardNavigation);
         window.removeEventListener('resize', handleWindowResize);
@@ -324,12 +347,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (toggleGuideFloatingButton) {
         toggleGuideFloatingButton.addEventListener('click', function(e) {
-            console.log("Botão flutuante do guia CLICADO!", e.target);
             e.preventDefault();
-            if (!guideOverlayEl) createGuideUI();
-            if (guideStepsData.length === 0) collectGuideSteps();
+            if (!guideOverlayEl) createGuideUI(); 
+            if (guideStepsData.length === 0) collectGuideSteps(); 
 
-            if (guideOverlayEl.classList.contains('active')) {
+            if (guideOverlayEl && guideOverlayEl.classList.contains('active')) {
                 endGuide(false);
             } else {
                 startInteractiveGuide(true);
@@ -339,7 +361,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     createGuideUI();
     collectGuideSteps();
-    if (guideStepsData.length > 0 && localStorage.getItem(GUIDE_COMPLETED_KEY) !== 'true') {
+    // Verifica se o guia para ESTA PÁGINA já foi completado
+    if (guideStepsData.length > 0 && localStorage.getItem(GUIDE_COMPLETED_KEY_FOR_CURRENT_PAGE) !== 'true') {
         setTimeout(() => startInteractiveGuide(false), 700);
     }
 });
