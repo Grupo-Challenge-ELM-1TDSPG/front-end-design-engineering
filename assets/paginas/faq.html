@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perguntas Frequentes (FAQ) - SimplesHC</title>
+    <link rel="shortcut icon" href="../img/icons/icone-site.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/faq.css">
+    <link rel="stylesheet" href="../css/guia-interativo.css">
+    <script src="../js/script.js" defer></script> 
+    <script src="../js/faq.js" defer></script>
+    <script src="../js/guia-interativo.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+             <div>
+                <a href="../../index.html" class="logo">
+                    <img src="../img/imagem-index/imagem-logo.jpeg" alt="Logo SimplesHC">
+                    <span>SimplesHC</span>
+                </a>
+            </div>
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="primary-navigation">
+                <img src="../img/icons/icone-botao.png" alt="Menu" class="menu-icon-img">
+            </button>
+            <nav id="primary-navigation" aria-hidden="true">
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="./hospitais.html">Hospitais</a></li>
+                    <li><a href="./servicos.html">Serviços</a></li>
+                    <li><a href="./integrantes.html">Integrantes</a></li>
+                    <li><a href="#" class="active">FAQ</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                    <li class="nav-item-login"><a href="../paginas/area-paciente/meu-perfil.html" class="btn-nav-login">Entrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção de introdução ao FAQ -->
+        <section id="faq-hero"
+                 data-guide-step="1"
+                 data-guide-title="Perguntas Frequentes"
+                 data-guide-text="Bem-vindo à nossa seção de Perguntas Frequentes! Aqui você pode encontrar respostas rápidas para as dúvidas mais comuns."
+                 data-guide-arrow="down">
+            <div class="container">
+                <h2>Perguntas Frequentes</h2>
+                <p>Encontre respostas para as dúvidas mais comuns sobre o SimplesHC.</p>
+            </div>
+        </section>
+
+        <!-- Seção de perguntas e respostas em formato de acordeão -->
+        <section id="faq-list"
+                 data-guide-step="2"
+                 data-guide-title="Como Usar o FAQ"
+                 data-guide-text="Clique em uma pergunta para expandir e ver a resposta. O ícone ao lado indica se a resposta está visível."
+                 data-guide-arrow="up">
+            <div class="container">
+                <div class="faq-accordion">
+                    <!-- Cada item representa uma pergunta frequente, com botão acessível e resposta oculta/expansível -->
+                    <!-- Item FAQ 1 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+                            Como faço para me cadastrar no SimplesHC?
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-1">
+                            <p>Para se cadastrar no SimplesHC, você precisa comparecer a uma unidade do Hospital das Clínicas com seus documentos pessoais (RG e CPF) e cartão do SUS. Após confirmar seus dados, você receberá um código de acesso para criar sua conta online.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item FAQ 2 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+                            Esqueci minha senha, como recupero o acesso?
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-2">
+                            <p>Na tela de login, clique em "Esqueci minha senha". Você receberá um link de recuperação no e-mail cadastrado. Caso não tenha acesso ao e-mail, entre em contato com o suporte ou compareça a uma unidade HC com seus documentos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item FAQ 3 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+                            Como marco uma consulta médica?
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-3">
+                            <p>Após fazer login, acesse a seção "Consultas" no menu principal. Clique em "Agendar Nova Consulta", selecione a especialidade desejada, a unidade HC e verifique as datas disponíveis. Confirme seus dados e finalize o agendamento.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item FAQ 4 -->
+                    <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+                            Os resultados de exames ficam disponíveis por quanto tempo?
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-4">
+                            <p>Os resultados de exames ficam disponíveis permanentemente em sua conta do SimplesHC. Você pode acessá-los a qualquer momento na seção "Exames", mesmo anos após a realização.</p>
+                        </div>
+                    </div>
+                     <!-- Item FAQ 5 -->
+                     <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-5">
+                            Como funciona a teleconsulta?
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-5">
+                            <p>A teleconsulta é realizada por videochamada. Após agendar, você receberá um lembrete por e-mail e no aplicativo. No horário marcado, acesse a seção "Teleconsulta" e clique em "Iniciar Consulta". O sistema usa o Google Meet para a videochamada, portanto certifique-se de que seu dispositivo tenha câmera e microfone funcionando.</p>
+                        </div>
+                    </div>
+                     <!-- Item FAQ 6 -->
+                     <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-6">
+                            Posso agendar exames pelo SimplesHC?
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-6">
+                            <p>Sim, você pode agendar exames que tenham sido solicitados por médicos do HC. Acesse a seção "Exames", clique em "Agendar Exame" e selecione a solicitação médica correspondente, a unidade e a data desejada.</p>
+                        </div>
+                    </div>
+                     <!-- Item FAQ 7 -->
+                     <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-7">
+                            Como desativo o guia interativo?
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-7">
+                            <p>O guia interativo pode ser desativado clicando no ícone de informação (i) no canto superior esquerdo da tela e selecionando "Desativar guia". Você pode reativá-lo a qualquer momento pelo mesmo ícone.</p>
+                        </div>
+                    </div>
+                     <!-- Item FAQ 8 -->
+                     <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-8">
+                            Posso acessar minhas receitas médicas pelo SimplesHC?
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-8">
+                            <p>Sim, todas as receitas emitidas por médicos do HC estão disponíveis digitalmente na seção "Receitas". Você pode visualizá-las, baixá-las em PDF ou compartilhá-las diretamente com farmácias parceiras.</p>
+                        </div>
+                    </div>
+                     <!-- Item FAQ 9 -->
+                     <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-9">
+                            O sistema é seguro? Como meus dados são protegidos?
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-9">
+                            <p>Sim, o SimplesHC segue rigorosos protocolos de segurança e criptografia. Seus dados médicos são protegidos conforme a LGPD (Lei Geral de Proteção de Dados) e só podem ser acessados por você e pelos profissionais de saúde autorizados envolvidos no seu atendimento.</p>
+                        </div>
+                    </div>
+                     <!-- Item FAQ 10 -->
+                     <div class="faq-item">
+                        <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-10">
+                            Posso usar o SimplesHC em qualquer dispositivo?
+                            <span class="faq-icon" aria-hidden="true"></span>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-10">
+                            <p>Sim, o SimplesHC é responsivo e funciona em computadores, tablets e smartphones. Basta acessar o site ou baixar o aplicativo, disponível para Android e iOS.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-nao-encontrou">
+                    <p>Não encontrou o que procurava?</p>
+                    <a href="./contato.html" class="btn btn-primary">Entre em contato conosco</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column about">
+                <h3>SimplesHC</h3>
+                <p>Simplificando o acesso à saúde para todos.</p>
+                <div class="social-icons">
+                     <a href="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-youtube.png" alt="Ícone Youtube"></a>
+                    <a href="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-instagram.png" alt="Ícone Instagram"></a>
+                    <a href="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../img/icons/icone-twitter.png" alt="Ícone Twitter"></a>
+                </div>
+            </div>
+            <div class="footer-column links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="./hospitais.html">Hospitais</a></li>
+                    <li><a href="./servicos.html">Serviços</a></li>
+                    <li><a href="./integrantes.html">Integrantes</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="./contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column links">
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a href="./area-paciente/meus-exames.html">Resultados de Exames</a></li>
+                    <li><a href="./area-paciente/minhas-receitas.html">Receitas Médicas</a></li>
+                    <li><a href="./area-paciente/minhas-consultas.html">Agendamento</a></li>
+                    <li><a href="./area-paciente/minhas-consultas.html">Teleconsulta</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact">
+                <h4>Contato</h4>
+                <p>HC Hospital das Clínicas</p>
+                <p>Rua Dr. Ovídio Pires de Campos, 225</p>
+                <p>São Paulo - SP</p>
+                <p>CEP 05403-010</p>
+                <p>Telefone: (11) 2661-0000</p>
+                <p>Email: contato@simplify-hc.com.br</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 SimplesHC. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="#" class="floating-btn accessibility-btn" id="toggleGuideFloatingButton" role="button" aria-label="Guia Interativo">♿</a>
+    </div>
+
+    <!--Alterar no github depois vv-->
+    <script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "41b39803-622b-419c-a690-8144ae42d17d", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "ba04109b-07dd-469b-bf3a-53a3a71ae680", // The ID of your service instance.
+        onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
+    </script>
+
+</body>
+</html>
