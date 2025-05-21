@@ -68,7 +68,7 @@ O projeto foi desenvolvido utilizando exclusivamente:
 
 * **`index.html`**: Página inicial do SimplesHC, apresentando a plataforma, benefícios e serviços. Inclui o Guia Interativo para orientação de novos usuários.
 
-* **`assets/paginas/cadastro-login.html`**: Centraliza autenticação e registro com:
+* **`./assets/paginas/cadastro-login.html`**: Centraliza autenticação e registro com:
   * Formulário de Login
   * Cadastro em etapas (stepper)
   * Recuperação de senha
