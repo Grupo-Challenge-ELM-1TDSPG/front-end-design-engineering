@@ -1,0 +1,895 @@
+/* =========================
+   Estilos Gerais da Página
+   ========================= */
+body.area-paciente-active {
+    background-color: #f4f7f6;
+}
+
+/* =========================
+   Layout Principal do Paciente
+   ========================= */
+.paciente-main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 160px);
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+/* =========================
+   Sidebar do Paciente
+   ========================= */
+.paciente-sidebar {
+    width: 100%;
+    background-color: #202670;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.paciente-sidebar-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.paciente-sidebar-header h3 {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.paciente-sidebar-header p#sidebarUserName {
+    font-size: 0.95em;
+    color: #e0e0e0;
+    word-wrap: break-word;
+}
+
+/* =========================
+   Navegação Lateral
+   ========================= */
+.paciente-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.paciente-nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #e0e0e0;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+    font-size: 0.95em;
+}
+
+.paciente-nav ul li a .nav-icon {
+    margin-right: 12px;
+    font-size: 1.1em;
+    width: 20px;
+    text-align: center;
+}
+
+.paciente-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transform: translateX(2px);
+}
+
+.paciente-nav ul li a.active {
+    background-color: #fff;
+    color: #202670;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.paciente-nav ul li a.active:hover {
+    background-color: #f0f0f0;
+    transform: translateX(0);
+}
+
+.paciente-nav ul li a.active .nav-icon {
+    color: #202670;
+}
+
+/* =========================
+   Área Principal de Conteúdo
+   ========================= */
+.paciente-content-area {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+
+/* =========================
+   Header do Conteúdo e Botões
+   ========================= */
+.content-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.content-header h2 {
+    color: #1a237e;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.content-header .btn,
+.form-actions-header .btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.form-actions-header {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.form-actions-header .btn {
+    flex-grow: 1;
+}
+
+/* Esconder botão de salvar e cancelar */
+.form-actions-header #saveProfileButton,
+.form-actions-header #cancelEditButton {
+    display: none;
+}
+
+/* =========================
+   Meu Perfil - Informações Pessoais
+   ========================= */
+.meus-dados-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.info-section,
+.saude-resumo-section,
+.notificacoes-section {
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #eef2f7;
+}
+
+.info-section h3,
+.saude-resumo-section h3,
+.notificacoes-section h3 {
+    font-size: 1.15em;
+    color: #3f51b5;
+    margin-top: 0;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 0.85em;
+    color: #555;
+    margin-bottom: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.info-item input[type="text"],
+.info-item input[type="email"],
+.info-item input[type="tel"] {
+    font-size: 0.95em;
+    color: #333;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-item input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    outline: none;
+}
+
+.info-item input:disabled {
+    background-color: #e9ecef;
+    color: #495057;
+    border-color: #ced4da;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#formInformacoesPessoais.edit-mode input:disabled {
+    background-color: #e9ecef !important;
+    opacity: 0.7 !important;
+    cursor: not-allowed !important;
+}
+
+#formInformacoesPessoais.edit-mode input#userName:disabled,
+#formInformacoesPessoais.edit-mode input#userCpf:disabled,
+#formInformacoesPessoais.edit-mode input#userDob:disabled {
+    background-color: #f2f2f2;
+    border-color: #ddd;
+    color: #666;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* =========================
+   Resumo de Saúde
+   ========================= */
+.saude-resumo-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+}
+
+.saude-resumo-item h4 {
+    font-size: 1.05em;
+    color: #005c99;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.saude-resumo-item p,
+.saude-resumo-item ul li {
+    font-size: 0.85em;
+    color: #444;
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.saude-resumo-item ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.saude-resumo-item ul li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.saude-resumo-item ul li:last-child {
+    border-bottom: none;
+}
+
+.saude-resumo-item em {
+    color: #777;
+    font-style: normal;
+}
+
+/* =========================
+   Notificações
+   ========================= */
+.notificacao-opcao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.notificacao-opcao:last-child {
+    border-bottom: none;
+}
+
+.notificacao-texto {
+    margin-bottom: 8px;
+}
+
+.notificacao-texto strong {
+    display: block;
+    font-size: 0.95em;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.notificacao-texto span {
+    font-size: 0.8em;
+    color: #666;
+    display: block;
+    line-height: 1.4;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 26px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input:checked+.slider {
+    background-color: #007bff;
+}
+
+input:checked+.slider:before {
+    transform: translateX(24px);
+}
+
+/* =========================
+   Tabela de Itens (Exames, etc.)
+   ========================= */
+.lista-itens {
+    margin-top: 20px;
+}
+
+.tabela-itens {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85em;
+}
+
+.tabela-itens th,
+.tabela-itens td {
+    text-align: left;
+    padding: 12px 10px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+
+.tabela-itens th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+}
+
+.tabela-itens td .btn-sm {
+    padding: 5px 10px;
+    font-size: 0.8em;
+}
+
+.tag-status {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 3px;
+}
+
+.tag-status.disponivel,
+.tag-status.ativa {
+    background-color: #28a745;
+}
+
+.tag-status.pendente,
+.tag-status.expirada {
+    background-color: #dc3545;
+}
+
+.resultado-desc {
+    display: block;
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 4px;
+}
+
+/* =========================
+   Cards de Itens (Receitas, Consultas)
+   ========================= */
+.item-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.item-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #eee;
+}
+
+.item-card-header h3 {
+    font-size: 1.1em;
+    margin-bottom: 0;
+    color: #005c99;
+}
+
+.item-info p {
+    font-size: 0.9em;
+    margin-bottom: 6px;
+    color: #495057;
+}
+
+/* Aumentar margem */
+.item-info p strong {
+    color: #343a40;
+}
+
+.item-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.item-actions .btn {
+    font-size: 0.85em;
+}
+
+/* =========================
+   Abas de Consultas
+   ========================= */
+.consultas-tabs {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.tab-link {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 0.95em;
+    color: #495057;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.tab-link:hover {
+    color: #0056b3;
+}
+
+.tab-link.active {
+    color: #007bff;
+    font-weight: 600;
+    border-color: #007bff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* =========================
+   Box de Informações Importantes
+   ========================= */
+.info-importante-box {
+    background-color: #e9f3fb;
+    border: 1px solid #cce5ff;
+    color: #004085;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 0.85em;
+}
+
+.info-importante-box h4 {
+    color: #004085;
+    font-size: 1.05em;
+    margin-bottom: 8px;
+}
+
+.info-importante-box ul {
+    padding-left: 18px;
+    margin-bottom: 0;
+}
+
+.info-importante-box ul li {
+    margin-bottom: 5px;
+}
+
+/* =========================
+   Placeholder para Listas Vazias
+   ========================= */
+.placeholder-content {
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border: 1px dashed #ced4da;
+    margin-top: 20px;
+}
+
+.placeholder-content.hidden {
+    /* Garante que o placeholder não ocupe espaço quando escondido */
+    display: none !important;
+}
+
+.placeholder-content .placeholder-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px auto;
+    opacity: 0.6;
+}
+
+.placeholder-content p {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.placeholder-content p small {
+    /* Para a submensagem */
+    font-size: 0.85em;
+    color: #868e96;
+}
+
+/* Quando a lista de itens está vazia e o placeholder está visível, a lista em si não deve ocupar espaço. O JS já adiciona 'hidden' ao placeholder quando a lista tem itens. Aqui, garantimos que a lista não tenha padding/margin indesejado se estiver vazia antes do JS popular ou se o placeholder for mostrado. */
+.lista-itens:empty {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/* =========================
+   Modal de Agendamento
+   ========================= */
+dialog.modal-overlay,
+/* Para quando <dialog> é usado nativamente */
+.modal-overlay.active {
+    /* Para o fallback JS com classe .active */
+    /* Estilo do Fundo/Overlay */
+    position: fixed;
+    /* Fixo na viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    /* Para centralizar o .modal-content */
+    justify-content: center;
+    padding: 20px;
+    z-index: 10050;
+    border: none;
+    /* Remove a borda padrão do <dialog> */
+    box-sizing: border-box;
+}
+
+/* Remove o display padrão do <dialog> quando não está aberto via JS (se não usar o atributo 'open' no HTML) */
+dialog.modal-overlay:not([open]) {
+    display: none;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    overflow-y: auto;
+    max-height: 90vh;
+    text-align: left;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    line-height: 1;
+    color: #888;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.modal-close-btn:hover {
+    color: #333;
+}
+
+.modal-content h3 {
+    /* #modalAgendarTitle */
+    font-size: 1.4em;
+    color: #1a237e;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Estilos para os grupos de formulário dentro do modal */
+#formAgendarConsulta .form-group {
+    margin-bottom: 18px;
+}
+
+#formAgendarConsulta label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    font-size: 0.9em;
+    color: #454545;
+}
+
+#formAgendarConsulta input[type="text"],
+#formAgendarConsulta input[type="datetime-local"],
+#formAgendarConsulta select,
+#formAgendarConsulta textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95em;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#formAgendarConsulta input[type="text"]:focus,
+#formAgendarConsulta input[type="datetime-local"]:focus,
+#formAgendarConsulta select:focus,
+#formAgendarConsulta textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    outline: none;
+}
+
+#formAgendarConsulta textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+#formAgendarConsulta button[type="submit"].btn-primary {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Mensagem de status do agendamento */
+.form-status-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.form-status-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-status-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.content-header .btn .nav-icon.icon-inverted-margin {
+    filter: invert(1);
+    margin-right: 8px;
+}
+
+.icon-inverted-margin {
+    filter: invert(1);
+    margin-right: 5px;
+}
+
+/* =========================
+   Responsividade (Media Queries)
+   ========================= */
+@media (max-width: 600px) {
+    .tabela-itens {
+        font-size: 0.75em;
+    }
+
+    .tabela-itens th,
+    .tabela-itens td {
+        padding: 8px 5px;
+    }
+
+    .tag-status {
+        font-size: 0.7em;
+        padding: 2px 6px;
+    }
+
+    .content-header .btn#agendarNovaConsultaBtn,
+    /* Específico para o botão de agendar */
+    .form-actions-header .btn {
+        /* Específico para botões no header de "Meu Perfil" */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .form-actions-header {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 600px) {
+    .paciente-main-container {
+        padding-top: 25px;
+        padding-bottom: 40px;
+    }
+
+    .paciente-sidebar {
+        padding: 25px;
+    }
+
+    .paciente-content-area {
+        padding: 25px;
+    }
+
+    .content-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .content-header h2 {
+        font-size: 1.7em;
+        margin-bottom: 0;
+    }
+
+    .form-actions-header {
+        width: auto;
+        margin-top: 0;
+        flex-direction: row;
+    }
+
+    .content-header .btn#agendarNovaConsultaBtn,
+    .form-actions-header .btn {
+        width: auto;
+        margin-top: 0;
+    }
+
+    .info-section h3,
+    .saude-resumo-section h3,
+    .notificacoes-section h3 {
+        font-size: 1.2em;
+    }
+
+    .notificacao-opcao {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .notificacao-texto {
+        margin-bottom: 0;
+    }
+
+    .tabela-itens {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 768px) {
+    .paciente-main-container {
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .paciente-sidebar {
+        width: 260px;
+        margin-bottom: 0;
+        align-self: flex-start;
+    }
+
+    .content-header h2 {
+        font-size: 1.8em;
+    }
+
+    .meus-dados-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: 30px;
+    }
+
+    .tab-link {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    .paciente-sidebar {
+        width: 280px;
+        padding: 30px 25px;
+    }
+
+    .paciente-sidebar-header h3 {
+        font-size: 1.3em;
+    }
+
+    .paciente-nav ul li a {
+        padding: 13px 18px;
+    }
+
+    .paciente-content-area {
+        padding: 30px;
+    }
+
+    .content-header h2 {
+        font-size: 1.9em;
+    }
+
+    .info-section h3,
+    .saude-resumo-section h3,
+    .notificacoes-section h3 {
+        font-size: 1.25em;
+    }
+
+    .info-item input,
+    .info-item select {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1300px) {
+    .paciente-sidebar {
+        width: 300px;
+    }
+
+    .paciente-main-container {
+        gap: 30px;
+    }
+
+    .content-header h2 {
+        font-size: 2em;
+    }
+}
