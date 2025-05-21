@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Consultas - SimplesHC</title>
+    <link rel="shortcut icon" href="../../img/icons/icone-site.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/area-paciente.css">
+    <link rel="stylesheet" href="../../../assets/css/guia-interativo.css">
+    <script src="../../../assets/js/script.js" defer></script>
+    <script src="../../../assets/js/dados-pacientes.js" defer></script>
+    <script src="../../../assets/js/area-paciente.js" defer></script>
+    <script src="../../../assets/js/guia-interativo.js" defer></script>
+</head>
+
+<body class="area-paciente-active">
+
+    <header>
+        <div class="container">
+            <div>
+                <a href="../../../index.html" class="logo">
+                    <img src="../../../assets/img/imagem-index/imagem-logo.jpeg" alt="Logo SimplesHC">
+                    <span>SimplesHC</span>
+                </a>
+            </div>
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="primary-navigation">
+                <img src="../../../assets/img/icons/icone-botao.png" alt="Menu" class="menu-icon-img">
+            </button>
+            <nav id="primary-navigation" aria-hidden="true" aria-label="Navegação principal">
+                <ul>
+                    <li><a href="../../../index.html">Início</a></li>
+                    <li><a href="../hospitais.html">Hospitais</a></li>
+                    <li><a href="../servicos.html">Serviços</a></li>
+                    <li><a href="../integrantes.html">Integrantes</a></li>
+                    <li><a href="../faq.html">FAQ</a></li>
+                    <li><a href="../contato.html">Contato</a></li>
+                    <li class="nav-item-login"><a href="./meu-perfil.html" class="btn-nav-login active">Meu Perfil</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="paciente-main-container container">
+        <aside class="paciente-sidebar">
+            <div class="paciente-sidebar-header">
+                <h3>Área do Paciente</h3>
+                <p id="sidebarUserName">Carregando...</p>
+            </div>
+            <nav class="paciente-nav" aria-label="Navegação da área do paciente">
+                <ul>
+                    <li><a href="./meu-perfil.html"><span class="nav-icon">👤</span> Meus Dados</a></li>
+                    <li><a href="./meus-exames.html"><span class="nav-icon">📄</span> Exames</a></li>
+                    <li><a href="./minhas-receitas.html"><span class="nav-icon">💊</span> Receitas</a></li>
+                    <li><a href="./minhas-consultas.html" class="active"><span class="nav-icon">📅</span> Consultas</a></li>
+                    <li><a href="#" id="linkSair"><span class="nav-icon">🚪</span> Sair</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="paciente-content-area"
+                 data-guide-step="1"
+                 data-guide-title="Gerencie Suas Consultas"
+                 data-guide-text="Nesta tela, você pode visualizar suas próximas consultas, acessar seu histórico e agendar novos atendimentos."
+                 data-guide-arrow="down">
+            <div class="content-header">
+                <h2>Minhas Consultas</h2>
+                <button class="btn btn-primary" id="agendarNovaConsultaBtn" type="button"
+                        data-guide-step="2"
+                        data-guide-title="Agendar Nova Consulta"
+                        data-guide-text="Clique aqui para abrir o formulário e agendar uma nova consulta presencial ou teleconsulta."
+                        data-guide-arrow="down">
+                    <span class="nav-icon icon-inverted-margin">📅</span> Agendar Nova Consulta
+                </button>
+            </div>
+
+            <div class="consultas-tabs"
+                 data-guide-step="3"
+                 data-guide-title="Navegue pelas Abas"
+                 data-guide-text="Alterne entre 'Próximas Consultas' para ver seus agendamentos futuros e 'Histórico de Consultas' para rever atendimentos passados."
+                 data-guide-arrow="down">
+                <button type="button" class="tab-link active" data-tab="proximas-consultas-content">Próximas Consultas</button>
+                <button type="button" class="tab-link" data-tab="historico-consultas-content">Histórico de Consultas</button>
+            </div>
+
+            <div id="proximas-consultas-content" class="tab-content active"
+                 data-guide-step="4"
+                 data-guide-title="Suas Próximas Consultas"
+                 data-guide-text="Aqui são listadas suas consultas futuras. Você pode ver detalhes ou cancelar, se necessário."
+                 data-guide-arrow="up">
+                <div class="placeholder-content hidden" id="proximasConsultasPlaceholder">
+                    <!-- O JS vai popular isso -->
+                </div>
+                <div id="proximasConsultasList" class="lista-itens">
+                    <!-- Conteúdo populado por JS -->
+                </div>
+            </div>
+
+            <div id="historico-consultas-content" class="tab-content">
+                <div class="placeholder-content hidden" id="historicoConsultasPlaceholder">
+                    <!-- O JS vai popular isso -->
+                </div>
+                <div id="historicoConsultasList" class="lista-itens">
+                    <!-- Conteúdo populado por JS -->
+                </div>
+            </div>
+
+            <div class="info-importante-box"
+                 data-guide-step="5"
+                 data-guide-title="Informações Importantes"
+                 data-guide-text="Leia estas dicas para um melhor aproveitamento das suas consultas."
+                 data-guide-arrow="up">
+                <h4>Informações Importantes</h4>
+                <ul>
+                    <li>Cancele consultas com pelo menos 24 horas de antecedência para evitar indisponibilidade de horários para outros pacientes.</li>
+                    <li>Para teleconsultas, teste seu equipamento (câmera e microfone) e conexão com a internet antes do horário agendado.</li>
+                    <li>Chegue com 15 minutos de antecedência para consultas presenciais.</li>
+                    <li>Leve seus documentos (RG, CPF, Cartão SUS) e, se aplicável, exames anteriores para a consulta.</li>
+                </ul>
+            </div>
+
+            <dialog id="modalAgendarConsulta" class="modal-overlay" aria-labelledby="modalAgendarTitle" aria-describedby="modalAgendarDescription">
+                <div class="modal-content">
+                    <button type="button" class="modal-close-btn" aria-label="Fechar modal">x</button>
+                    <h3 id="modalAgendarTitle">Agendar Nova Consulta</h3>
+                    <form id="formAgendarConsulta">
+                        <div class="form-group">
+                            <label for="tipoConsulta">Tipo de Consulta*:</label>
+                            <select id="tipoConsulta" name="tipoConsulta" required>
+                                <option value="Presencial">Presencial</option>
+                                <option value="Teleconsulta">Teleconsulta</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="especialidadeConsulta">Especialidade*:</label>
+                            <input type="text" id="especialidadeConsulta" name="especialidadeConsulta" placeholder="Ex: Cardiologia" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="medicoConsulta">Médico (Opcional):</label>
+                            <input type="text" id="medicoConsulta" name="medicoConsulta" placeholder="Nome do médico">
+                        </div>
+                        <div class="form-group">
+                            <label for="dataConsulta">Data e Hora*:</label>
+                            <input type="datetime-local" id="dataConsulta" name="dataConsulta" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="localConsulta">Local/Unidade*:</label>
+                            <input type="text" id="localConsulta" name="localConsulta" placeholder="Ex: HC Clínicas - Unidade Central ou 'Teleconsulta'" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="observacoesConsulta">Observações:</label>
+                            <textarea id="observacoesConsulta" name="observacoesConsulta" rows="3" placeholder="Ex: Trazer exames anteriores"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Confirmar Agendamento</button>
+                    </form>
+                    <div id="agendamentoStatus" class="form-status-message" aria-live="polite"></div>
+                </div>
+            </dialog>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column about">
+                <h3>SimplesHC</h3>
+                <p>Simplificando o acesso à saúde para todos.</p>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/user/RedeLucyMontoro" title="Youtube da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../../../assets/img/icons/icone-youtube.png" alt="Ícone Youtube"></a>
+                    <a href="https://www.instagram.com/redelucymontoro/" title="Instagram da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../../../assets/img/icons/icone-instagram.png" alt="Ícone Instagram"></a>
+                    <a href="https://twitter.com/redelucymontoro" title="Twitter da Rede Lucy Montoro" target="_blank" rel="noopener"><img src="../../../assets/img/icons/icone-twitter.png" alt="Ícone Twitter"></a>
+                </div>
+            </div>
+            <div class="footer-column links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="../../../index.html">Início</a></li>
+                    <li><a href="../hospitais.html">Hospitais</a></li>
+                    <li><a href="../servicos.html">Serviços</a></li>
+                    <li><a href="../integrantes.html">Integrantes</a></li>
+                    <li><a href="../faq.html">FAQ</a></li>
+                    <li><a href="../contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-column links">
+                <h4>Serviços Paciente</h4>
+                <ul>
+                    <li><a href="./meus-exames.html">Resultados de Exames</a></li>
+                    <li><a href="./minhas-receitas.html">Receitas Médicas</a></li>
+                    <li><a href="./minhas-consultas.html">Agendamento</a></li>
+                    <li><a href="./minhas-consultas.html">Teleconsulta</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact">
+                <h4>Contato</h4>
+                <p>HC Hospital das Clínicas</p>
+                <p>Rua Dr. Ovídio Pires de Campos, 225</p>
+                <p>São Paulo - SP</p>
+                <p>CEP 05403-010</p>
+                <p>Telefone: (11) 2661-0000</p>
+                <p>Email: contato@simplify-hc.com.br</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 SimplesHC. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="#" class="floating-btn accessibility-btn" id="toggleGuideFloatingButton" role="button" aria-label="Guia Interativo">♿</a>
+    </div>
+
+    <script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "41b39803-622b-419c-a690-8144ae42d17d", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "ba04109b-07dd-469b-bf3a-53a3a71ae680", // The ID of your service instance.
+        onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
+    </script>
+
+</body>
+</html>
