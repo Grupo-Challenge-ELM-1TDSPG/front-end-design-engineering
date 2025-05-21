@@ -160,6 +160,7 @@ O JavaScript é responsável por toda a interatividade, validação, simulação
   - Permite edição do perfil e atualização de preferências.
   - Gerencia o sistema de abas em consultas (próximas/histórico).
   - Controla o modal de agendamento de consultas e o cancelamento.
+  - Permite o download de documentos importantes, como resultados de exames e receitas médicas, diretamente pela interface.
   - Realiza logout seguro.
 - **Exemplo de uso:** Incluído em todas as páginas dentro de `./area-paciente/`.
 
@@ -196,6 +197,21 @@ O JavaScript é responsável por toda a interatividade, validação, simulação
 - **Exemplo de uso:** Incluído em todas as páginas que possuem o Guia Interativo.
 
 ---
+
+## 🧪 Testando a Aplicação
+
+Para explorar a área do paciente e testar funcionalidades como o download de documentos (exames e receitas em PDF), você pode utilizar as seguintes credenciais fictícias:
+
+*   **CPF:** `392.942.080-52`
+*   **Senha:** `123@mudar`
+
+Ao logar com esta conta, você terá acesso a:
+*   Visualização e edição (simulada) do perfil do paciente.
+*   Lista de exames com opção de **abrir/baixar PDFs de exemplo**.
+*   Lista de receitas médicas com opção de **abrir/baixar PDFs de exemplo**.
+*   Gerenciamento de consultas (agendamento e visualização de histórico).
+
+**Observação:** Todos os dados são fictícios e as interações (como salvar edições no perfil ou agendar consultas) são simuladas e armazenadas apenas localmente no seu navegador (`localStorage`).
 
 ## 👥 Integrantes da Equipe
 
