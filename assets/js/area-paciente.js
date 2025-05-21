@@ -284,16 +284,14 @@ function renderMeusExames(pacienteLogado) {
             let pdfLinkHtml = 'N/A'; // Default se não houver link
 
             // LÓGICA DE DOWNLOAD DE PDF:
-            // Se o exame possui um link válido para PDF (não é vazio, não é '#'), exibe botão de download.
+            // Se o exame possui um link válido para PDF (não é vazio, não é '#'), exibe botão para abrir em nova aba.
             // Se o link for '#', exibe botão desabilitado indicando PDF indisponível.
             // Se não houver link, mostra 'N/A'.
             if (exame.pdfLink && exame.pdfLink !== '#' && exame.pdfLink.trim() !== '') {
-                // Se existe um pdfLink, não é '#' e não é vazio, cria um link de download
-                pdfLinkHtml = `<a href="${exame.pdfLink}" class="btn btn-secondary btn-sm" download="${exame.nome.replace(/\s+/g, '_')}_${exame.data.replace(/\//g, '-')}.pdf">Baixar PDF</a>`;
-            } else if (exame.pdfLink === '#') { // Para links de placeholder ou "em breve"
+                pdfLinkHtml = `<a href="${exame.pdfLink}" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">Baixar PDF</a>`;
+            } else if (exame.pdfLink === '#') {
                 pdfLinkHtml = `<a href="#" class="btn btn-secondary btn-sm disabled" aria-disabled="true" onclick="return false;">PDF Indisponível</a>`;
             }
-            // Se pdfLink for undefined, null ou vazio, permanece 'N/A'
 
             tr.innerHTML = `
                 <td>${exame.nome}</td>
@@ -338,6 +336,13 @@ function renderMinhasReceitas(pacienteLogado) {
             const status = dataValidade < hoje ? 'Expirada' : 'Ativa';
             const statusClass = status === 'Ativa' ? 'ativa' : 'expirada';
 
+            // LÓGICA DE DOWNLOAD DE PDF DA RECEITA:
+            // Por padrão, botão desabilitado. Se houver pdfLink válido, ativa para abrir em nova aba.
+            let pdfLinkReceitaHtml = `<a href="#" class="btn btn-secondary btn-sm disabled" aria-disabled="true" onclick="return false;">Baixar PDF</a>`;
+            if (receita.pdfLink && receita.pdfLink !== '#' && receita.pdfLink.trim() !== '') {
+                pdfLinkReceitaHtml = `<a href="${receita.pdfLink}" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">Baixar Receita (PDF)</a>`;
+            }
+
             card.innerHTML = `
                 <div class="item-card-header">
                     <h3>${receita.nome}</h3>
@@ -350,7 +355,7 @@ function renderMinhasReceitas(pacienteLogado) {
                     <p><strong>Validade:</strong> ${receita.validade}</p>
                 </div>
                 <div class="item-actions">
-                    <a href="#" class="btn btn-secondary btn-sm" onclick="console.log('Funcionalidade de download de receita ainda não implementada.'); return false;">Baixar Receita (PDF)</a>
+                    ${pdfLinkReceitaHtml}
                 </div>
             `;
             receitasContainer.appendChild(card);

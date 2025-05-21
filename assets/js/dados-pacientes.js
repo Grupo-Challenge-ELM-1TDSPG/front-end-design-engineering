@@ -23,9 +23,9 @@ const dadosIniciaisPacientes = {
             { nome: "Metformina 500mg", instrucoes: "1 comprimido, 2x ao dia após as refeições", medico: "Dra. Beatriz Costa", dataPrescricao: "15/06/2025", validade: "15/12/2025" }
         ],
         ultimosExames: [
-            { nome: "Hemograma Completo", data: "30/04/2025", status: "Disponível", descricaoResultado: "Dentro dos parâmetros normais", pdfLink: "#" },
-            { nome: "Glicemia em Jejum", data: "19/04/2025", status: "Disponível", descricaoResultado: "Elevada - 110 mg/dL", pdfLink: "#" },
-            { nome: "Colesterol Total", data: "19/04/2025", status: "Disponível", descricaoResultado: "Normal - 180 mg/dL", pdfLink: "#" }
+            { nome: "Hemograma Completo", data: "30/04/2025", status: "Disponível", descricaoResultado: "Dentro dos parâmetros normais", pdfLink: "../../PDF/Relatorio_Lazarus.pdf" },
+            { nome: "Glicemia em Jejum", data: "19/04/2025", status: "Disponível", descricaoResultado: "Elevada - 110 mg/dL", pdfLink: "../../PDF/Relatorio_Lazarus.pdf" },
+            { nome: "Colesterol Total", data: "19/04/2025", status: "Disponível", descricaoResultado: "Normal - 180 mg/dL", pdfLink: "../../PDF/Relatorio_Lazarus.pdf" }
         ],
         historicoConsultas: [
             { tipo: "Teleconsulta", especialidade: "Endocrinologia", medico: "Dra. Beatriz Costa", dataHora: "18/05/2024 às 14:00", local: "Teleconsulta" },
@@ -48,7 +48,7 @@ const dadosIniciaisPacientes = {
             { nome: "Isotretinoína 20mg", instrucoes: "1 cápsula ao dia, após o almoço", medico: "Dra. Sofia Pereira", dataPrescricao: "01/08/2024", validade: "01/11/2024" }
         ],
         ultimosExames: [
-            { nome: "Perfil Lipídico", data: "15/07/2024", status: "Disponível", descricaoResultado: "HDL baixo, demais normais", pdfLink: "#" }
+            { nome: "Perfil Lipídico", data: "15/07/2024", status: "Disponível", descricaoResultado: "HDL baixo, demais normais", pdfLink: "../../PDF/Relatorio_Lazarus.pdf" }
         ],
         historicoConsultas: []
     },
