@@ -19,8 +19,8 @@ const dadosIniciaisPacientes = {
             { tipo: "Teleconsulta", especialidade: "Clínica Geral", medico: "Dra. Ana Martins", dataHora: "25/06/2025 às 14:30", local: "Teleconsulta", observacoes: "Verificar conexão antes."}
         ],
         receitasAtivas: [
-            { nome: "Losartana Potássica 50mg", instrucoes: "1 comprimido, 1x ao dia", medico: "Dr. Ricardo Alves", dataPrescricao: "10/07/2024", validade: "10/01/2025" },
-            { nome: "Metformina 500mg", instrucoes: "1 comprimido, 2x ao dia após as refeições", medico: "Dra. Beatriz Costa", dataPrescricao: "15/06/2025", validade: "15/12/2025" }
+            { nome: "Losartana Potássica 50mg", instrucoes: "1 comprimido, 1x ao dia", medico: "Dr. Ricardo Alves", dataPrescricao: "10/07/2024", validade: "10/01/2025", pdfLink: "../../PDF/Relatorio_Lazarus.pdf" },
+            { nome: "Metformina 500mg", instrucoes: "1 comprimido, 2x ao dia após as refeições", medico: "Dra. Beatriz Costa", dataPrescricao: "15/06/2025", validade: "15/12/2025", pdfLink: "../../PDF/Relatorio_Lazarus.pdf" }
         ],
         ultimosExames: [
             { nome: "Hemograma Completo", data: "30/04/2025", status: "Disponível", descricaoResultado: "Dentro dos parâmetros normais", pdfLink: "../../PDF/Relatorio_Lazarus.pdf" },
@@ -45,7 +45,7 @@ const dadosIniciaisPacientes = {
             { tipo: "Teleconsulta", especialidade: "Dermatologia", medico: "Dra. Sofia Pereira", dataHora: "10/09/2024 às 15:30", local: "Teleconsulta", observacoes: "Tenha boa iluminação no ambiente."}
         ],
         receitasAtivas: [
-            { nome: "Isotretinoína 20mg", instrucoes: "1 cápsula ao dia, após o almoço", medico: "Dra. Sofia Pereira", dataPrescricao: "01/08/2024", validade: "01/11/2024" }
+            { nome: "Isotretinoína 20mg", instrucoes: "1 cápsula ao dia, após o almoço", medico: "Dra. Sofia Pereira", dataPrescricao: "01/08/2024", validade: "01/11/2024", pdfLink: "../../PDF/Relatorio_Lazarus.pdf" }
         ],
         ultimosExames: [
             { nome: "Perfil Lipídico", data: "15/07/2024", status: "Disponível", descricaoResultado: "HDL baixo, demais normais", pdfLink: "../../PDF/Relatorio_Lazarus.pdf" }

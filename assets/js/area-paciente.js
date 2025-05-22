@@ -337,10 +337,14 @@ function renderMinhasReceitas(pacienteLogado) {
             const statusClass = status === 'Ativa' ? 'ativa' : 'expirada';
 
             // LÓGICA DE DOWNLOAD DE PDF DA RECEITA:
-            // Por padrão, botão desabilitado. Se houver pdfLink válido, ativa para abrir em nova aba.
-            let pdfLinkReceitaHtml = `<a href="#" class="btn btn-secondary btn-sm disabled" aria-disabled="true" onclick="return false;">Baixar PDF</a>`;
+            // Se a receita possui um link válido para PDF (não é vazio, não é '#'), exibe botão para abrir em nova aba.
+            // Se o link for '#', exibe botão desabilitado indicando PDF indisponível.
+            // Se não houver link, mostra 'N/A'.
+            let pdfLinkReceitaHtml = 'N/A'; // Default se não houver link
             if (receita.pdfLink && receita.pdfLink !== '#' && receita.pdfLink.trim() !== '') {
                 pdfLinkReceitaHtml = `<a href="${receita.pdfLink}" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">Baixar Receita (PDF)</a>`;
+            } else if (receita.pdfLink === '#') {
+                pdfLinkReceitaHtml = `<a href="#" class="btn btn-secondary btn-sm disabled" aria-disabled="true" onclick="return false;">PDF Indisponível</a>`;
             }
 
             card.innerHTML = `
@@ -375,7 +379,7 @@ function renderizarConsultaCard(consulta, isProxima = true) {
     if (isProxima) {
         actionsHtml = `<a href="#" class="btn btn-secondary btn-sm cancelar-consulta-btn" data-consulta-id="${consulta.dataHora}-${consulta.medico.replace(/\s+/g, '')}">Cancelar</a>`;
         if (isTeleconsulta) {
-            actionsHtml += `<a href="https://meet.google.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Entrar na Teleconsulta</a>`;
+            actionsHtml += `<a href="https://meet.google.com/boi-nbny-cnf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Entrar na Teleconsulta</a>`;
         } else {
             actionsHtml += `<a href="#" class="btn btn-secondary btn-sm ver-detalhes-btn">Ver Detalhes</a>`;
         }
