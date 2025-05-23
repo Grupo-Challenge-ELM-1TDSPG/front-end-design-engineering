@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
         guideArrowEl, guidePrevBtn, guideNextBtn, guideSkipLinkEl, guideStepCounterEl, guideVideoContainerEl;
 
     let highlightedElement = null;
-    let originalHighlightedElementStyles = {};
+    let originalHighlightedElementStyles = {}; // Para restaurar estilos inline
+    let wasOriginallyStatic = false; // Nova flag para controlar position:static
 
     const toggleGuideFloatingButton = document.getElementById('toggleGuideFloatingButton');
 
@@ -174,10 +175,26 @@ document.addEventListener('DOMContentLoaded', function () {
     function clearHighlight() {
         if (highlightedElement) {
             highlightedElement.classList.remove('guide-highlighted-element');
-            for (const prop in originalHighlightedElementStyles) {
-                highlightedElement.style[prop] = originalHighlightedElementStyles[prop];
+
+            // Restaura 'position'
+            if (originalHighlightedElementStyles.hasOwnProperty('position')) {
+                highlightedElement.style.position = originalHighlightedElementStyles.position;
+            } else if (wasOriginallyStatic) { // Se nós mudamos para 'relative' de 'static'
+                highlightedElement.style.removeProperty('position');
             }
+
+            // Restaura 'z-index'
+            if (originalHighlightedElementStyles.hasOwnProperty('zIndex')) {
+                highlightedElement.style.zIndex = originalHighlightedElementStyles.zIndex;
+            } else {
+                // Se não havia z-index inline original, remove o que adicionamos.
+                // Isso é importante mesmo que position tenha sido revertido para static,
+                // pois um z-index pode ter sido aplicado a um elemento que já era 'relative'.
+                highlightedElement.style.removeProperty('z-index');
+            }
+            
             originalHighlightedElementStyles = {};
+            wasOriginallyStatic = false; // Reseta a flag
             highlightedElement = null;
         }
         // Limpa o vídeo também
@@ -243,14 +260,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (highlightedElement) {
-            if (highlightedElement.style.position) originalHighlightedElementStyles.position = highlightedElement.style.position;
-            if (highlightedElement.style.zIndex) originalHighlightedElementStyles.zIndex = highlightedElement.style.zIndex;
+            originalHighlightedElementStyles = {}; // Limpa para o novo elemento
+            wasOriginallyStatic = false; // Reseta flag
+
+            // Salva estilos inline ANTES de modificar
+            if (highlightedElement.style.position) {
+                originalHighlightedElementStyles.position = highlightedElement.style.position;
+            }
+            if (highlightedElement.style.zIndex) {
+                originalHighlightedElementStyles.zIndex = highlightedElement.style.zIndex;
+            }
 
             highlightedElement.classList.add('guide-highlighted-element');
-            if (window.getComputedStyle(highlightedElement).position === 'static') {
+            
+            const computedPosition = window.getComputedStyle(highlightedElement).position;
+            if (computedPosition === 'static') {
                 highlightedElement.style.position = 'relative';
+                wasOriginallyStatic = true; // Marca que nós mudamos de static para relative
             }
-            highlightedElement.style.zIndex = '10000';
+            // Aplica z-index alto sempre para o elemento destacado
+            highlightedElement.style.zIndex = '10000'; 
 
             requestAnimationFrame(() => {
                 const rect = highlightedElement.getBoundingClientRect();

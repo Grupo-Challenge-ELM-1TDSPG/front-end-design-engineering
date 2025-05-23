@@ -39,6 +39,8 @@ O projeto está organizado da seguinte forma:
 |       |-- imagens-hospitais/ (Imagens para a página de hospitais)
 |       |-- imagens-integrantes/ (Fotos dos integrantes)
 |       |-- imagens-servicos/ (Imagens para a página de serviços)
+|   |-- pdf/
+|   |   |-- relatorio-lazarus.pdf
 |-- paginas/
 |   |-- contato.html
 |   |-- faq.html
@@ -76,7 +78,7 @@ Ao logar com esta conta, você terá acesso a:
 *   Lista de receitas médicas com opção de **abrir/baixar PDFs de exemplo**.
 *   Gerenciamento de consultas (agendamento e visualização de histórico).
 
-**Observação:** Todos os dados são fictícios e as interações (como salvar edições no perfil ou agendar consultas) são simuladas e armazenadas apenas localmente no seu navegador (`localStorage`).
+**Observação:** Todos os dados são fictícios e as interações (como salvar edições no perfil ou agendar consultas) são simuladas e armazenadas apenas localmente no seu navegador (`localStorage`). O arquivo `assets/pdf/relatorio-lazarus.pdf` é utilizado como um dos exemplos para testar a funcionalidade de visualização de documentos.
 
 ---
 
